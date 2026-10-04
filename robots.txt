@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xushnudxudoyberdiev25-sys.github.io/My_web/sitemap.xml
