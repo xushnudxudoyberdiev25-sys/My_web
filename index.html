@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Kaizen — Cybersecurity Management student, developer and technology enthusiast from Tashkent.">
+<meta name="theme-color" content="#073d29">
+
+<meta property="og:title" content="Kaizen | Cybersecurity Student">
+<meta property="og:description" content="Cybersecurity Management student and developer from Tashkent.">
+<meta property="og:type" content="website">
+
+<title>Kaizen | Cybersecurity Student</title>
+
+<style>
+:root{
+--green:#087f5b;
+--dark:#043b2c;
+--deep:#062d22;
+--mint:#e8f7f0;
+--text:#10231b;
+--muted:#617169;
+--border:#d7e7df;
+--card:#fff;
+--bg:#fff;
+--shadow:0 18px 50px rgba(4,59,44,.09);
+--nav:rgba(255,255,255,.82)
+}
+
+[data-theme="dark"]{
+--text:#eaf7f1;
+--muted:#a9bdb4;
+--border:#21483b;
+--card:#0b2119;
+--bg:#06130f;
+--mint:#0d3024;
+--nav:rgba(6,19,15,.82);
+--shadow:0 18px 50px rgba(0,0,0,.28)
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box
+}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:90px
+}
+
+body{
+font-family:Inter,Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.65;
+overflow-x:hidden;
+transition:background .3s,color .3s
+}
+
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:-2;
+background-image:
+linear-gradient(rgba(8,127,91,.045) 1px,transparent 1px),
+linear-gradient(90deg,rgba(8,127,91,.045) 1px,transparent 1px);
+background-size:42px 42px;
+mask-image:linear-gradient(to bottom,black,transparent 80%)
+}
+
+body:after{
+content:"";
+position:fixed;
+width:420px;
+height:420px;
+border-radius:50%;
+background:rgba(8,127,91,.08);
+filter:blur(90px);
+right:-180px;
+top:90px;
+pointer-events:none;
+z-index:-1
+}
+
+a{
+color:inherit
+}
+
+button,a{
+font:inherit
+}
+
+.container{
+width:min(1120px,88%);
+margin:auto
+}
+
+.green{
+color:var(--green)
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+border-bottom:1px solid var(--border);
+background:var(--nav);
+backdrop-filter:blur(18px)
+}
+
+.nav-inner{
+width:min(1180px,92%);
+height:76px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.logo{
+text-decoration:none;
+font-weight:900;
+font-size:24px;
+letter-spacing:1px
+}
+
+.logo span{
+color:var(--green)
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+list-style:none
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--muted);
+font-size:14px;
+font-weight:700;
+transition:.25s
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+color:var(--green)
+}
+
+.nav-actions{
+display:flex;
+gap:8px;
+align-items:center
+}
+
+.icon-btn{
+width:40px;
+height:40px;
+border:1px solid var(--border);
+border-radius:10px;
+background:var(--card);
+color:var(--text);
+cursor:pointer
+}
+
+.menu-btn{
+display:none
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+padding:145px 0 90px;
+display:flex;
+align-items:center;
+position:relative
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:70px;
+align-items:center
+}
+
+.eyebrow{
+display:inline-flex;
+align-items:center;
+gap:9px;
+padding:7px 12px;
+border:1px solid var(--border);
+border-radius:999px;
+background:var(--mint);
+color:var(--green);
+font:700 13px/1 monospace;
+margin-bottom:25px
+}
+
+.dot{
+width:7px;
+height:7px;
+border-radius:50%;
+background:var(--green);
+box-shadow:0 0 0 5px rgba(8,127,91,.12)
+}
+
+h1{
+font-size:clamp(58px,8vw,94px);
+line-height:.95;
+letter-spacing:-5px;
+margin-bottom:22px
+}
+
+h1 span{
+color:var(--green)
+}
+
+.hero h2{
+font-size:clamp(22px,3vw,32px);
+margin-bottom:20px
+}
+
+.hero p{
+max-width:650px;
+color:var(--muted);
+font-size:17px
+}
+
+.buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:30px
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:13px 19px;
+border-radius:11px;
+text-decoration:none;
+font-weight:800;
+font-size:14px;
+border:1px solid transparent;
+transition:.25s
+}
+
+.btn-primary{
+background:var(--dark);
+color:#fff
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 28px rgba(4,59,44,.2)
+}
+
+.btn-secondary{
+border-color:var(--border);
+background:var(--card)
+}
+
+.btn-secondary:hover{
+border-color:var(--green);
+color:var(--green)
+}
+
+/* TERMINAL */
+
+.terminal-window{
+background:#071710;
+color:#d7f5e8;
+border:1px solid #1c4738;
+border-radius:16px;
+box-shadow:0 25px 70px rgba(4,59,44,.18);
+overflow:hidden;
+transform:rotate(1deg)
+}
+
+.terminal-top{
+height:42px;
+display:flex;
+align-items:center;
+gap:7px;
+padding:0 15px;
+background:#0b2018;
+border-bottom:1px solid #173c30
+}
+
+.terminal-top i{
+width:9px;
+height:9px;
+border-radius:50%;
+background:#789
+}
+
+.terminal-title{
+margin-left:8px;
+color:#7fa596;
+font:12px monospace
+}
+
+.terminal-body{
+padding:25px;
+font:14px/2 monospace
+}
+
+.terminal-body .prompt{
+color:#65d5a8
+}
+
+.cursor{
+display:inline-block;
+width:8px;
+height:16px;
+background:#65d5a8;
+vertical-align:-3px;
+animation:blink 1s infinite
+}
+
+@keyframes blink{
+50%{
+opacity:0
+}
+}
+
+.terminal-stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:18px
+}
+
+.tstat{
+border:1px solid #21483b;
+padding:13px;
+border-radius:10px
+}
+
+.tstat small{
+display:block;
+color:#7fa596
+}
+
+.tstat strong{
+color:#e6fff4
+}
+
+/* SECTIONS */
+
+section{
+padding:105px 0;
+position:relative
+}
+
+.section-title{
+margin-bottom:42px
+}
+
+.section-title small{
+font:800 12px monospace;
+color:var(--green);
+letter-spacing:1px
+}
+
+.section-title h2{
+font-size:clamp(34px,5vw,52px);
+line-height:1.05;
+letter-spacing:-2px;
+margin-top:10px
+}
+
+.section-title p{
+color:var(--muted);
+max-width:650px;
+margin-top:13px
+}
+
+/* ABOUT */
+
+.about-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:55px
+}
+
+.about-text p{
+font-size:17px;
+color:var(--muted)
+}
+
+.info-list{
+display:grid;
+gap:12px
+}
+
+.info-card{
+padding:20px;
+border:1px solid var(--border);
+border-radius:14px;
+background:var(--card);
+box-shadow:var(--shadow)
+}
+
+.info-card strong{
+display:block;
+font-size:13px;
+color:var(--green);
+font-family:monospace
+}
+
+.info-card span{
+font-weight:800
+}
+
+.mini-stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:28px
+}
+
+.mini-stat{
+padding:18px;
+border:1px solid var(--border);
+border-radius:14px;
+background:var(--card)
+}
+
+.mini-stat strong{
+font-size:27px;
+display:block;
+color:var(--green)
+}
+
+.mini-stat span{
+font-size:12px;
+color:var(--muted)
+}
+
+/* SKILLS */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
+}
+
+.skill-card{
+padding:22px;
+border:1px solid var(--border);
+border-radius:15px;
+background:var(--card);
+transition:.25s
+}
+
+.skill-card:hover,
+.project:hover,
+.certificate:hover{
+transform:translateY(-5px);
+box-shadow:var(--shadow);
+border-color:rgba(8,127,91,.35)
+}
+
+.skill-icon{
+font:800 12px monospace;
+color:var(--green);
+margin-bottom:15px
+}
+
+.skill-card h3{
+font-size:18px;
+margin-bottom:7px
+}
+
+.skill-card p{
+font-size:14px;
+color:var(--muted)
+}
+
+.tags{
+display:flex;
+gap:7px;
+flex-wrap:wrap;
+margin-top:13px
+}
+
+.tag{
+padding:5px 9px;
+border-radius:7px;
+background:var(--mint);
+color:var(--green);
+font:700 11px monospace
+}
+
+/* EDUCATION */
+
+.timeline{
+position:relative;
+margin-left:10px;
+padding-left:32px;
+border-left:1px solid var(--border)
+}
+
+.timeline-item{
+position:relative;
+padding:0 0 38px
+}
+
+.timeline-item:last-child{
+padding-bottom:0
+}
+
+.timeline-item:before{
+content:"";
+position:absolute;
+left:-38px;
+top:5px;
+width:11px;
+height:11px;
+border-radius:50%;
+background:var(--green);
+box-shadow:0 0 0 6px var(--mint)
+}
+
+.timeline-date{
+font:700 12px monospace;
+color:var(--green)
+}
+
+.timeline h3{
+font-size:24px;
+margin:6px 0
+}
+
+.timeline p{
+color:var(--muted)
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px
+}
+
+.project{
+padding:26px;
+border:1px solid var(--border);
+border-radius:16px;
+background:var(--card);
+transition:.25s;
+display:flex;
+flex-direction:column
+}
+
+.project-number{
+font:800 12px monospace;
+color:var(--green)
+}
+
+.project h3{
+font-size:24px;
+margin:13px 0 7px
+}
+
+.status{
+display:inline-block;
+width:max-content;
+padding:5px 9px;
+border-radius:7px;
+background:var(--mint);
+color:var(--green);
+font:800 10px monospace;
+margin-bottom:14px
+}
+
+.project p{
+color:var(--muted);
+font-size:14px;
+flex:1
+}
+
+.project-actions{
+display:flex;
+gap:9px;
+margin-top:22px
+}
+
+.project-actions a,
+.project-actions button{
+padding:9px 12px;
+border-radius:9px;
+border:1px solid var(--border);
+background:transparent;
+color:var(--text);
+text-decoration:none;
+font-size:12px;
+font-weight:800;
+cursor:pointer
+}
+
+.project-actions a:hover,
+.project-actions button:hover{
+border-color:var(--green);
+color:var(--green)
+}
+
+/* CERTIFICATE */
+
+.certificate{
+display:flex;
+align-items:center;
+gap:22px;
+padding:28px;
+border:1px solid var(--border);
+border-radius:17px;
+background:var(--card);
+transition:.25s
+}
+
+.cert-icon{
+width:58px;
+height:58px;
+border-radius:14px;
+background:var(--mint);
+display:grid;
+place-items:center;
+color:var(--green);
+font-size:24px
+}
+
+.certificate h3{
+font-size:25px
+}
+
+.certificate p{
+color:var(--muted)
+}
+
+.score{
+margin-left:auto;
+font-weight:900;
+color:var(--green);
+white-space:nowrap
+}
+
+/* CONTACT */
+
+.contact-box{
+padding:55px;
+border-radius:22px;
+background:var(--dark);
+color:#fff;
+position:relative;
+overflow:hidden
+}
+
+.contact-box:after{
+content:"</>";
+position:absolute;
+right:7%;
+bottom:-35px;
+font:900 130px monospace;
+color:rgba(255,255,255,.05)
+}
+
+.contact-box h3{
+font-size:38px
+}
+
+.contact-box p{
+color:#b9d0c6;
+max-width:650px;
+margin:10px 0 25px
+}
+
+.socials{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+position:relative;
+z-index:1
+}
+
+.socials a{
+padding:10px 14px;
+border:1px solid #2b5949;
+border-radius:9px;
+text-decoration:none;
+font-weight:800;
+font-size:13px
+}
+
+.socials a:hover{
+background:#fff;
+color:var(--dark)
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid var(--border);
+padding:28px 0;
+color:var(--muted);
+font-size:13px
+}
+
+.footer-inner{
+display:flex;
+justify-content:space-between;
+gap:20px
+}
+
+.footer-inner strong{
+color:var(--text)
+}
+
+.reveal{
+opacity:0;
+transform:translateY(22px);
+transition:opacity .7s ease,transform .7s ease
+}
+
+.reveal.show{
+opacity:1;
+transform:none
+}
+
+#top{
+position:fixed;
+right:22px;
+bottom:22px;
+width:42px;
+height:42px;
+border:1px solid var(--border);
+border-radius:11px;
+background:var(--card);
+color:var(--green);
+cursor:pointer;
+opacity:0;
+pointer-events:none;
+transition:.25s;
+z-index:900
+}
+
+#top.show{
+opacity:1;
+pointer-events:auto
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+.nav-links{
+position:absolute;
+top:76px;
+left:6%;
+right:6%;
+display:none;
+flex-direction:column;
+gap:0;
+padding:10px;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:14px;
+box-shadow:var(--shadow)
+}
+
+.nav-links.open{
+display:flex
+}
+
+.nav-links a{
+display:block;
+padding:12px
+}
+
+.menu-btn{
+display:block
+}
+
+.hero-grid,
+.about-grid{
+grid-template-columns:1fr
+}
+
+.hero{
+padding-top:125px
+}
+
+.terminal-window{
+max-width:650px
+}
+
+.skills-grid,
+.projects{
+grid-template-columns:1fr 1fr
+}
+
+.score{
+margin-left:0
+}
+
+.certificate{
+align-items:flex-start;
+flex-wrap:wrap
+}
+
+}
+
+@media(max-width:560px){
+
+.nav-inner{
+height:68px
+}
+
+.nav-links{
+top:68px
+}
+
+.hero{
+padding-top:110px
+}
+
+.hero-grid{
+gap:40px
+}
+
+h1{
+letter-spacing:-3px
+}
+
+.skills-grid,
+.projects{
+grid-template-columns:1fr
+}
+
+.mini-stats{
+grid-template-columns:1fr
+}
+
+.certificate{
+display:block
+}
+
+.cert-icon{
+margin-bottom:15px
+}
+
+.score{
+margin-top:15px
+}
+
+.contact-box{
+padding:32px 24px
+}
+
+.contact-box h3{
+font-size:30px
+}
+
+.footer-inner{
+flex-direction:column
+}
+
+.terminal-body{
+padding:18px;
+font-size:12px
+}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+*,html{
+scroll-behavior:auto!important;
+animation:none!important;
+transition:none!important
+}
+
+.reveal{
+opacity:1;
+transform:none
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-inner">
+
+<a class="logo" href="#home">K<span>.</span></a>
+
+<ul class="nav-links" id="navLinks">
+<li><a class="active" href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certificates">Certificate</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="nav-actions">
+<button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+</div>
+
+</div>
+</nav>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+<div class="reveal">
+
+<div class="eyebrow">
+<span class="dot"></span>
+AVAILABLE FOR LEARNING & PROJECTS
+</div>
+
+<h1>Hi, I'm <span>Xushnud.</span></h1>
+
+<h2>Cybersecurity Student & Developer</h2>
+
+<p>
+I'm a Cybersecurity Management student from Tashkent, Uzbekistan.
+I'm passionate about cybersecurity, programming, Linux, networking,
+web security, and learning how modern technologies work.
+</p>
+
+<div class="buttons">
+<a class="btn btn-primary" href="#projects">
+View My Projects →
+</a>
+
+<a class="btn btn-secondary" href="#contact">
+Let's Connect
+</a>
+</div>
+
+</div>
+
+
+<div class="terminal-window reveal">
+
+<div class="terminal-top">
+<i></i>
+<i></i>
+<i></i>
+<span class="terminal-title">kaizen@portfolio:~</span>
+</div>
+
+<div class="terminal-body">
+
+<div>
+<span class="prompt">kaizen@portfolio</span>:~$ whoami
+</div>
+
+<div>cybersecurity_student</div>
+
+<br>
+
+<div>
+<span class="prompt">kaizen@portfolio</span>:~$ skills --current
+</div>
+
+<div>
+Linux · Networking · Web Security
+</div>
+
+<div>
+Python · Nmap · HTML/CSS · Git
+</div>
+
+<br>
+
+<div>
+<span class="prompt">kaizen@portfolio</span>:~$ status
+</div>
+
+<div>
+Learning. Building. Improving.
+<span class="cursor"></span>
+</div>
+
+<div class="terminal-stats">
+
+<div class="tstat">
+<small>FOCUS</small>
+<strong>Cybersecurity</strong>
+</div>
+
+<div class="tstat">
+<small>LOCATION</small>
+<strong>Tashkent</strong>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container reveal">
+
+<div class="section-title">
+<small>// 01. ABOUT ME</small>
+<h2>Who I Am</h2>
+</div>
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<p>
+I'm a university student from Tashkent, Uzbekistan,
+currently studying Cybersecurity Management at Cyber University.
+</p>
+
+<p style="margin-top:18px">
+My main interest is cybersecurity, and I'm continuously developing
+my skills in programming, Linux, networking, web security,
+and ethical security testing.
+</p>
+
+<p style="margin-top:18px">
+I created this website to showcase my projects, studies,
+skills, education and progress in technology.
+</p>
+
+<div class="mini-stats">
+
+<div class="mini-stat">
+<strong>01</strong>
+<span>University Student</span>
+</div>
+
+<div class="mini-stat">
+<strong>06+</strong>
+<span>Core Skill Areas</span>
+</div>
+
+<div class="mini-stat">
+<strong>24/7</strong>
+<span>Learning Mindset</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="info-list">
+
+<div class="info-card">
+<strong>EDUCATION</strong>
+<span>Cyber University</span>
+</div>
+
+<div class="info-card">
+<strong>MAJOR</strong>
+<span>Cybersecurity Management</span>
+</div>
+
+<div class="info-card">
+<strong>LOCATION</strong>
+<span>Tashkent, Uzbekistan</span>
+</div>
+
+<div class="info-card">
+<strong>INTERESTS</strong>
+<span>Cybersecurity · Linux · Programming</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="container reveal">
+
+<div class="section-title">
+
+<small>// 02. SKILLS</small>
+
+<h2>What I Work With</h2>
+
+<p>
+Technologies and areas I'm currently learning and practicing.
+</p>
+
+</div>
+
+
+<div class="skills-grid">
+
+
+<div class="skill-card">
+
+<div class="skill-icon">01 / SECURITY</div>
+
+<h3>Cybersecurity</h3>
+
+<p>
+Security fundamentals, ethical testing and practical security learning.
+</p>
+
+<div class="tags">
+<span class="tag">Web Security</span>
+<span class="tag">Nmap</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">02 / SYSTEMS</div>
+
+<h3>Linux</h3>
+
+<p>
+Working with Linux environments, commands and system fundamentals.
+</p>
+
+<div class="tags">
+<span class="tag">Linux</span>
+<span class="tag">CLI</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">03 / NETWORK</div>
+
+<h3>Networking</h3>
+
+<p>
+Learning networks, protocols, ports and practical troubleshooting.
+</p>
+
+<div class="tags">
+<span class="tag">TCP/IP</span>
+<span class="tag">Ports</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">04 / CODE</div>
+
+<h3>Python</h3>
+
+<p>
+Building programming fundamentals and small practical projects.
+</p>
+
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">Logic</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">05 / WEB</div>
+
+<h3>Web Development</h3>
+
+<p>
+Creating responsive websites with clean HTML and CSS.
+</p>
+
+<div class="tags">
+<span class="tag">HTML</span>
+<span class="tag">CSS</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">06 / TOOLS</div>
+
+<h3>Git & GitHub</h3>
+
+<p>
+Using version control to manage, publish and improve projects.
+</p>
+
+<div class="tags">
+<span class="tag">Git</span>
+<span class="tag">GitHub</span>
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<div class="container reveal">
+
+<div class="section-title">
+<small>// 03. EDUCATION</small>
+<h2>My Journey</h2>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-date">2026 — PRESENT</div>
+
+<h3>Cyber University</h3>
+
+<p>
+Cybersecurity Management · Tashkent, Uzbekistan
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-date">CURRENT FOCUS</div>
+
+<h3>Practical Cybersecurity Learning</h3>
+
+<p>
+Linux, networking, web security, Nmap,
+programming and ethical security testing.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container reveal">
+
+<div class="section-title">
+
+<small>// 04. PROJECTS</small>
+
+<h2>Things I'm Building</h2>
+
+<p>
+Projects that reflect my learning and interests.
+</p>
+
+</div>
+
+
+<div class="projects">
+
+
+<article class="project">
+
+<div class="project-number">PROJECT_01</div>
+
+<h3>Marshrut App</h3>
+
+<span class="status">
+IDEA / IN PROGRESS
+</span>
+
+<p>
+A concept for helping passengers see marshrutka locations,
+estimated arrival times and available seats before travelling.
+</p>
+
+<div class="tags">
+<span class="tag">App Idea</span>
+<span class="tag">UX/UI</span>
+</div>
+
+<div class="project-actions">
+
+<button onclick="showProject(
+'Marshrut App',
+'A transport app concept focused on route visibility, ETA and available seats.'
+)">
+Details →
+</button>
+
+</div>
+
+</article>
+
+
+<article class="project">
+
+<div class="project-number">PROJECT_02</div>
+
+<h3>Cybersecurity Lab</h3>
+
+<span class="status">
+LEARNING / IN PROGRESS
+</span>
+
+<p>
+A personal cybersecurity learning environment where I practice
+Linux, networking, web security, Nmap and ethical security testing.
+</p>
+
+<div class="tags">
+<span class="tag">Linux</span>
+<span class="tag">Nmap</span>
+<span class="tag">Web Security</span>
+</div>
+
+<div class="project-actions">
+
+<button onclick="showProject(
+'Cybersecurity Lab',
+'A personal learning environment for practical cybersecurity skills and responsible security testing.'
+)">
+Details →
+</button>
+
+</div>
+
+</article>
+
+
+<article class="project">
+
+<div class="project-number">PROJECT_03</div>
+
+<h3>Personal Portfolio</h3>
+
+<span class="status">
+LIVE / IMPROVING
+</span>
+
+<p>
+This portfolio website, built to document my cybersecurity journey,
+projects, skills, education and achievements.
+</p>
+
+<div class="tags">
+<span class="tag">HTML</span>
+<span class="tag">CSS</span>
+<span class="tag">JavaScript</span>
+</div>
+
+<div class="project-actions">
+
+<a
+href="https://github.com/xushnudxudoyberdiev25-sys"
+target="_blank"
+rel="noopener"
+>
+GitHub ↗
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+</div>
+
+</section>
+
+
+<!-- CERTIFICATE -->
+
+<section id="certificates">
+
+<div class="container reveal">
+
+<div class="section-title">
+
+<small>// 05. CERTIFICATE</small>
+
+<h2>My Achievement</h2>
+
+</div>
+
+
+<div class="certificate">
+
+<div class="cert-icon">
+✓
+</div>
+
+<div>
+
+<h3>IELTS</h3>
+
+<p>
+International English Language Testing System
+</p>
+
+</div>
+
+<div class="score">
+Overall Band Score: 6.5
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container reveal">
+
+<div class="section-title">
+
+<small>// 06. CONTACT</small>
+
+<h2>Let's Connect</h2>
+
+</div>
+
+
+<div class="contact-box">
+
+<h3>Have an idea?</h3>
+
+<p>
+I'm always interested in technology, cybersecurity,
+new projects and learning opportunities.
+Feel free to contact me.
+</p>
+
+
+<div class="socials">
+
+<a
+href="https://t.me/xush_me"
+target="_blank"
+rel="noopener"
+>
+Telegram ↗
+</a>
+
+<a
+href="https://instagram.com/ka1zen.x_"
+target="_blank"
+rel="noopener"
+>
+Instagram ↗
+</a>
+
+<a href="mailto:xushnudxudoyberdiev25@gmail.com">
+Email ↗
+</a>
+
+<a
+href="https://github.com/xushnudxudoyberdiev25-sys"
+target="_blank"
+rel="noopener"
+>
+GitHub ↗
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+© 2026 <strong>Kaizen</strong>. All rights reserved.
+</div>
+
+<div>
+Cybersecurity Student & Developer
+</div>
+
+</div>
+
+</footer>
+
+
+<button id="top" aria-label="Back to top">
+↑
+</button>
+
+
+<script>
+
+const root = document.documentElement;
+
+const themeBtn = document.getElementById('themeBtn');
+
+const menuBtn = document.getElementById('menuBtn');
+
+const navLinks = document.getElementById('navLinks');
+
+
+/* THEME */
+
+const saved = localStorage.getItem('theme');
+
+if(saved){
+root.dataset.theme = saved;
+}
+
+themeBtn.textContent =
+root.dataset.theme === 'dark' ? '☀' : '☾';
+
+
+themeBtn.addEventListener('click',()=>{
+
+const dark = root.dataset.theme !== 'dark';
+
+root.dataset.theme = dark ? 'dark' : 'light';
+
+localStorage.setItem(
+'theme',
+root.dataset.theme
+);
+
+themeBtn.textContent =
+dark ? '☀' : '☾';
+
+});
+
+
+/* MOBILE MENU */
+
+menuBtn.addEventListener(
+'click',
+()=>{
+navLinks.classList.toggle('open');
+}
+);
+
+
+document
+.querySelectorAll('.nav-links a')
+.forEach(a=>{
+
+a.addEventListener(
+'click',
+()=>{
+navLinks.classList.remove('open');
+}
+);
+
+});
+
+
+/* SCROLL ANIMATION */
+
+const reveals =
+document.querySelectorAll('.reveal');
+
+
+const observer =
+new IntersectionObserver(
+entries=>{
+
+entries.forEach(e=>{
+
+if(e.isIntersecting){
+
+e.target.classList.add('show');
+
+observer.unobserve(e.target);
+
+}
+
+});
+
+},
+{
+threshold:.12
+}
+);
+
+
+reveals.forEach(
+el=>observer.observe(el)
+);
+
+
+/* ACTIVE NAV */
+
+const sections =
+[...document.querySelectorAll('main section')];
+
+const links =
+[...document.querySelectorAll('.nav-links a')];
+
+
+const navObs =
+new IntersectionObserver(
+entries=>{
+
+entries.forEach(e=>{
+
+if(e.isIntersecting){
+
+links.forEach(l=>{
+
+l.classList.toggle(
+'active',
+l.getAttribute('href') === '#' + e.target.id
+);
+
+});
+
+}
+
+});
+
+},
+{
+rootMargin:'-35% 0px -55% 0px'
+}
+);
+
+
+sections.forEach(
+s=>navObs.observe(s)
+);
+
+
+/* BACK TO TOP */
+
+const topBtn =
+document.getElementById('top');
+
+
+window.addEventListener(
+'scroll',
+()=>{
+topBtn.classList.toggle(
+'show',
+scrollY > 600
+);
+},
+{
+passive:true
+}
+);
+
+
+topBtn.onclick =
+()=>{
+scrollTo({
+top:0,
+behavior:'smooth'
+});
+};
+
+
+/* PROJECT POPUP */
+
+function showProject(title,text){
+
+alert(
+title +
+'\n\n' +
+text
+);
+
+}
+
+</script>
+
+</body>
+</html>
