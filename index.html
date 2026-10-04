@@ -1,794 +1,691 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-    <!-- Google Verification -->
-    <meta name="google-site-verification" content="rBYQC7pr4zazi7U1fvbDwqtxw7pmCh9gHIZ78V4NahA">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO -->
-    <meta name="description" content="Kaizen — Cybersecurity student and aspiring security specialist. Explore my skills, projects, education, achievements and cybersecurity journey.">
-    <meta name="keywords" content="Kaizen, Cybersecurity, Cybersecurity Student, Linux, Networking, Programming, Cybersecurity Portfolio">
-    <meta name="author" content="Kaizen">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Kaizen — Cybersecurity Portfolio">
-    <meta property="og:description" content="Cybersecurity student portfolio — skills, projects, education and achievements.">
-    <meta property="og:type" content="website">
-
-    <title>Kaizen — Cybersecurity Portfolio</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --bg: #06100c;
-            --bg-secondary: #091710;
-            --card: rgba(10, 29, 20, 0.75);
-            --green: #00ff88;
-            --green-dark: #00b866;
-            --text: #eafff3;
-            --muted: #8da99b;
-            --border: rgba(0, 255, 136, 0.18);
-            --shadow: rgba(0, 255, 136, 0.12);
-        }
-
-        body.light {
-            --bg: #f3faf6;
-            --bg-secondary: #e8f4ed;
-            --card: rgba(255,255,255,0.82);
-            --green: #008f50;
-            --green-dark: #006b3c;
-            --text: #10251b;
-            --muted: #52685c;
-            --border: rgba(0, 143, 80, 0.18);
-            --shadow: rgba(0, 143, 80, 0.12);
-        }
-
-        body {
-            font-family: "Courier New", monospace;
-            background: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
-            transition: background 0.4s ease, color 0.4s ease;
-        }
-
-        /* =========================
-           CYBER BACKGROUND
-        ========================= */
-
-        .network {
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-            overflow: hidden;
-            pointer-events: none;
-
-            background:
-                linear-gradient(
-                    rgba(0,255,136,0.035) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(0,255,136,0.035) 1px,
-                    transparent 1px
-                );
-
-            background-size: 55px 55px;
-        }
-
-        .network::before,
-        .network::after {
-            content: "";
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.15;
-        }
-
-        .network::before {
-            background: var(--green);
-            top: 5%;
-            left: 10%;
-        }
-
-        .network::after {
-            background: #006b3c;
-            bottom: 5%;
-            right: 5%;
-        }
-
-        .scanline {
-            position: fixed;
-            inset: 0;
-            z-index: 10;
-            pointer-events: none;
-
-            background:
-                repeating-linear-gradient(
-                    to bottom,
-                    transparent 0px,
-                    transparent 3px,
-                    rgba(0,255,136,0.012) 4px
-                );
-        }
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-
-            padding: 18px 7%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            background: rgba(6,16,12,0.72);
-            backdrop-filter: blur(15px);
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        body.light nav {
-            background: rgba(243,250,246,0.8);
-        }
-
-        .logo {
-            color: var(--green);
-            font-size: 23px;
-            font-weight: bold;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: var(--text);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            text-decoration: none;
-            transition: 0.3s;
-        }
+<meta charset="UTF-8">
+
+<meta name="google-site-verification"
+content="rBYQC7pr4zazi7U1fvbDwqtxw7pmCh9gHIZ78V4NahA">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Kaizen (Khushnud) — Cybersecurity student and aspiring security specialist. Explore my journey in cybersecurity, Linux, networking, programming and technology.">
+
+<meta name="keywords"
+content="Kaizen, Khushnud, Cybersecurity, Cybersecurity Student, Linux, Networking, Programming, Uzbekistan, Cyber University">
+
+<meta name="author" content="Kaizen (Khushnud)">
+
+<meta property="og:title" content="Kaizen — Cybersecurity Portfolio">
+<meta property="og:description"
+content="Cybersecurity student exploring Linux, networking, programming and information security.">
+<meta property="og:type" content="website">
+
+<title>Kaizen — Cybersecurity Portfolio</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #06100c;
+    --bg-secondary: #091710;
+    --card: rgba(10, 29, 20, 0.75);
+    --green: #00ff88;
+    --green-dark: #00b866;
+    --text: #eafff3;
+    --muted: #8da99b;
+    --border: rgba(0, 255, 136, 0.18);
+    --shadow: rgba(0, 255, 136, 0.12);
+}
+
+body.light {
+    --bg: #f4fff9;
+    --bg-secondary: #e9fff2;
+    --card: rgba(255, 255, 255, 0.8);
+    --green: #008f52;
+    --green-dark: #006b3d;
+    --text: #07140d;
+    --muted: #527064;
+    --border: rgba(0, 120, 70, 0.2);
+    --shadow: rgba(0, 120, 70, 0.12);
+}
+
+body {
+    font-family: "Courier New", monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    transition: 0.3s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--green);
+    color: #001b0e;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.network {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    background-image:
+        linear-gradient(rgba(0,255,136,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,136,0.035) 1px, transparent 1px);
+    background-size: 45px 45px;
+}
+
+.blur {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: var(--green);
+    filter: blur(140px);
+    opacity: 0.08;
+    z-index: -2;
+}
+
+.blur.one {
+    top: 10%;
+    left: -100px;
+}
+
+.blur.two {
+    bottom: 5%;
+    right: -100px;
+}
+
+.scanline {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 3px,
+        rgba(0,255,136,0.015) 4px
+    );
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+    background: rgba(6,16,12,0.78);
+    border-bottom: 1px solid var(--border);
+}
+
+body.light nav {
+    background: rgba(244,255,249,0.8);
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--green);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo::after {
+    content: "_";
+    animation: blink 1s infinite;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+.theme-btn {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--green);
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 25px;
+}
+
+section {
+    padding: 110px 0;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.section-title h2 span {
+    color: var(--green);
+}
+
+.section-title p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.status {
+    color: var(--green);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero h2 {
+    font-size: 20px;
+    color: var(--muted);
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    max-width: 650px;
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid var(--green);
+    border-radius: 6px;
+    color: var(--green);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--green);
+    color: #001b0e;
+    box-shadow: 0 0 25px var(--shadow);
+}
+
+.btn.primary {
+    background: var(--green);
+    color: #001b0e;
+}
+
+/* =========================
+   TERMINAL
+========================= */
+
+.terminal {
+    background: #020805;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,255,136,0.08);
+}
+
+.terminal-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.terminal-body {
+    padding: 20px;
+    min-height: 260px;
+    color: var(--green);
+    font-size: 13px;
+}
+
+.terminal-line {
+    margin-bottom: 8px;
+}
+
+.terminal-muted {
+    color: #7c9a8b;
+}
+
+.cursor {
+    display: inline-block;
+    width: 7px;
+    height: 15px;
+    background: var(--green);
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    max-width: 900px;
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 35px var(--shadow);
+}
+
+.about p {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.about strong {
+    color: var(--green);
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--green);
+    box-shadow: 0 0 25px var(--shadow);
+}
+
+.skill-number {
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================
+   JOURNEY / TIMELINE
+========================= */
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 45px;
+    padding-left: 45px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 15px var(--green);
+}
+
+.timeline-item .date {
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.timeline-item h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--green);
+}
+
+.project-tag {
+    color: var(--green);
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================
+   ACHIEVEMENTS
+========================= */
+
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.achievement {
+    text-align: center;
+    padding: 25px 15px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 10px;
+}
+
+.achievement-number {
+    font-size: 30px;
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.achievement p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    padding: 50px 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+}
+
+.contact-box h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.contact-box h2 span {
+    color: var(--green);
+}
+
+.contact-box p {
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.socials a {
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    border-radius: 6px;
+    color: var(--muted);
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: var(--green);
+    border-color: var(--green);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievements {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    section {
+        padding: 80px 0;
+    }
+
+    .nav-container {
+        padding: 15px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 17px;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .achievements {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .about {
+        padding: 25px;
+    }
+
+    .terminal-body {
+        min-height: 220px;
+        font-size: 12px;
+    }
+}
+
+</style>
 
-        .nav-links a:hover {
-            color: var(--green);
-        }
-
-        .theme-btn {
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--green);
-
-            padding: 8px 12px;
-            border-radius: 8px;
-
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 120px 7% 70px;
-
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 950px;
-            text-align: center;
-        }
-
-        .terminal-tag {
-            display: inline-block;
-
-            color: var(--green);
-
-            border: 1px solid var(--border);
-            background: var(--card);
-
-            padding: 10px 16px;
-            border-radius: 8px;
-
-            margin-bottom: 25px;
-
-            box-shadow: 0 0 25px var(--shadow);
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 90px);
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: var(--green);
-
-            text-shadow:
-                0 0 30px rgba(0,255,136,0.35);
-        }
-
-        .hero h2 {
-            font-size: clamp(18px, 3vw, 28px);
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            margin-top: 35px;
-
-            display: flex;
-            justify-content: center;
-
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 13px 22px;
-
-            border-radius: 8px;
-            text-decoration: none;
-
-            border: 1px solid var(--green);
-
-            transition: 0.3s;
-            font-family: inherit;
-        }
-
-        .btn-primary {
-            background: var(--green);
-            color: #031008;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 0 25px rgba(0,255,136,0.3);
-        }
-
-        .btn-outline {
-            color: var(--green);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: rgba(0,255,136,0.08);
-        }
-
-        /* =========================
-           TERMINAL
-        ========================= */
-
-        .terminal {
-            margin: 45px auto 0;
-
-            max-width: 750px;
-
-            text-align: left;
-
-            border: 1px solid var(--border);
-            background: rgba(2,10,7,0.88);
-
-            border-radius: 12px;
-            overflow: hidden;
-
-            box-shadow: 0 0 40px var(--shadow);
-        }
-
-        .terminal-head {
-            padding: 10px 15px;
-
-            border-bottom: 1px solid var(--border);
-
-            color: var(--muted);
-        }
-
-        .terminal-body {
-            padding: 20px;
-
-            min-height: 150px;
-
-            line-height: 1.8;
-
-            color: #bfffdc;
-        }
-
-        .prompt {
-            color: var(--green);
-        }
-
-        #terminalInput {
-            background: transparent;
-            border: none;
-            outline: none;
-
-            color: #bfffdc;
-
-            font-family: inherit;
-
-            width: 70%;
-            font-size: 16px;
-        }
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        section {
-            padding: 100px 7%;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 55px;
-        }
-
-        .section-title span {
-            color: var(--green);
-        }
-
-        .section-title h2 {
-            font-size: clamp(30px, 5vw, 45px);
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: var(--muted);
-        }
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about {
-            max-width: 900px;
-            margin: auto;
-
-            padding: 35px;
-
-            border: 1px solid var(--border);
-
-            background: var(--card);
-
-            border-radius: 15px;
-
-            line-height: 1.9;
-
-            color: var(--muted);
-
-            box-shadow: 0 15px 50px var(--shadow);
-        }
-
-        .about strong {
-            color: var(--green);
-        }
-
-        /* =========================
-           SKILLS
-        ========================= */
-
-        .skills-grid {
-            max-width: 1100px;
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
-
-            gap: 20px;
-        }
-
-        .skill-card {
-            padding: 25px;
-
-            border: 1px solid var(--border);
-
-            background: var(--card);
-
-            border-radius: 12px;
-
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-6px);
-
-            border-color: var(--green);
-
-            box-shadow: 0 0 25px var(--shadow);
-        }
-
-        .skill-card h3 {
-            color: var(--green);
-            margin-bottom: 12px;
-        }
-
-        .skill-card p {
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        /* =========================
-           LEARNING JOURNEY
-        ========================= */
-
-        .timeline {
-            max-width: 850px;
-            margin: auto;
-
-            border-left: 2px solid var(--green);
-
-            padding-left: 35px;
-        }
-
-        .timeline-item {
-            position: relative;
-
-            margin-bottom: 40px;
-
-            padding: 25px;
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 12px;
-
-            transition: 0.3s;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(5px);
-
-            border-color: var(--green);
-
-            box-shadow: 0 0 25px var(--shadow);
-        }
-
-        .timeline-item::before {
-            content: "";
-
-            position: absolute;
-
-            width: 12px;
-            height: 12px;
-
-            background: var(--green);
-
-            border-radius: 50%;
-
-            left: -42px;
-            top: 30px;
-
-            box-shadow: 0 0 15px var(--green);
-        }
-
-        .timeline-item .date {
-            color: var(--green);
-
-            font-size: 14px;
-
-            margin-bottom: 8px;
-        }
-
-        .timeline-item h3 {
-            margin-bottom: 5px;
-        }
-
-        .timeline-item p {
-            color: var(--muted);
-
-            margin-top: 8px;
-
-            line-height: 1.7;
-        }
-
-        /* =========================
-           PROJECTS
-        ========================= */
-
-        .projects {
-            max-width: 1100px;
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(280px, 1fr));
-
-            gap: 25px;
-        }
-
-        .project {
-            padding: 28px;
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 14px;
-
-            transition: 0.3s;
-        }
-
-        .project:hover {
-            transform: translateY(-7px);
-
-            border-color: var(--green);
-        }
-
-        .project-number {
-            color: var(--green);
-            font-size: 14px;
-        }
-
-        .project h3 {
-            margin: 15px 0 12px;
-        }
-
-        .project p {
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .tech {
-            margin-top: 18px;
-
-            display: flex;
-
-            gap: 8px;
-
-            flex-wrap: wrap;
-        }
-
-        .tech span {
-            padding: 5px 9px;
-
-            border-radius: 5px;
-
-            color: var(--green);
-
-            border: 1px solid var(--border);
-
-            font-size: 12px;
-        }
-
-        /* =========================
-           ACHIEVEMENTS
-        ========================= */
-
-        .achievements {
-            max-width: 950px;
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-
-            gap: 20px;
-        }
-
-        .achievement {
-            padding: 28px;
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 14px;
-
-            transition: 0.3s;
-        }
-
-        .achievement:hover {
-            transform: translateY(-5px);
-
-            border-color: var(--green);
-        }
-
-        .achievement-icon {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-
-        .achievement h3 {
-            color: var(--green);
-            margin-bottom: 10px;
-        }
-
-        .achievement p {
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact-box {
-            max-width: 800px;
-            margin: auto;
-
-            text-align: center;
-
-            padding: 45px 25px;
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 15px;
-        }
-
-        .contact-box p {
-            color: var(--muted);
-
-            line-height: 1.8;
-
-            margin-bottom: 30px;
-        }
-
-        .socials {
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
-        }
-
-        .socials a {
-            color: var(--green);
-
-            text-decoration: none;
-
-            border: 1px solid var(--border);
-
-            padding: 10px 15px;
-
-            border-radius: 7px;
-
-            transition: 0.3s;
-        }
-
-        .socials a:hover {
-            background: rgba(0,255,136,0.08);
-
-            transform: translateY(-3px);
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            text-align: center;
-
-            padding: 30px;
-
-            border-top: 1px solid var(--border);
-
-            color: var(--muted);
-        }
-
-        footer span {
-            color: var(--green);
-        }
-
-        /* =========================
-           ANIMATION
-        ========================= */
-
-        .reveal {
-            opacity: 0;
-
-            transform: translateY(30px);
-
-            transition: 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-
-            transform: translateY(0);
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 750px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            section {
-                padding: 80px 5%;
-            }
-
-            .hero {
-                padding-left: 5%;
-                padding-right: 5%;
-            }
-
-            .terminal {
-                font-size: 13px;
-            }
-
-            #terminalInput {
-                width: 65%;
-            }
-
-            .timeline {
-                padding-left: 25px;
-            }
-
-            .timeline-item::before {
-                left: -32px;
-            }
-
-        }
-
-    </style>
 </head>
 
 <body>
 
 <div class="network"></div>
+<div class="blur one"></div>
+<div class="blur two"></div>
 <div class="scanline"></div>
-
 
 <!-- =========================
      NAVBAR
@@ -796,44 +693,26 @@
 
 <nav>
 
-    <a href="#home" class="logo">
-        KAIZEN<span>_</span>
-    </a>
+    <div class="nav-container">
 
-    <ul class="nav-links">
+        <a href="#home" class="logo">KAIZEN</a>
 
-        <li>
+        <div class="nav-links">
+
             <a href="#about">About</a>
-        </li>
-
-        <li>
             <a href="#skills">Skills</a>
-        </li>
-
-        <li>
             <a href="#education">Journey</a>
-        </li>
-
-        <li>
             <a href="#projects">Projects</a>
-        </li>
-
-        <li>
             <a href="#achievements">Achievements</a>
-        </li>
-
-        <li>
             <a href="#contact">Contact</a>
-        </li>
 
-    </ul>
+            <button class="theme-btn" onclick="toggleTheme()">
+                ☼
+            </button>
 
-    <button
-        class="theme-btn"
-        onclick="toggleTheme()"
-    >
-        ☼ / ☾
-    </button>
+        </div>
+
+    </div>
 
 </nav>
 
@@ -842,87 +721,90 @@
      HERO
 ========================= -->
 
-<section class="hero" id="home">
+<section id="home" class="hero">
 
-    <div class="hero-content">
+    <div class="container">
 
-        <div class="terminal-tag">
-            &gt; cybersecurity_mode: ACTIVE_
-        </div>
+        <div class="hero-grid">
 
-        <h1>
-            Hello, I'm
-            <span>Kaizen</span>
-            (Khushnud)
-        </h1>
+            <div>
 
-        <h2>
-            Cybersecurity Student & Aspiring Security Specialist
-        </h2>
+                <div class="status">
+                    &gt; cybersecurity_mode: ACTIVE_
+                </div>
 
-        <p>
-            Exploring cybersecurity, Linux, networking and programming.
-            Building practical skills through continuous learning and projects.
-        </p>
+                <h1>
+                    Hello, I'm <span>Kaizen</span>
+                    (Khushnud)
+                </h1>
 
-        <div class="hero-buttons">
+                <h2>
+                    Cybersecurity Student & Aspiring Security Specialist
+                </h2>
 
-            <a
-                href="#projects"
-                class="btn btn-primary"
-            >
-                View Projects
-            </a>
+                <p class="hero-description">
+                    I am passionate about cybersecurity, Linux,
+                    networking, programming and information technology.
+                    I am continuously learning, building projects
+                    and developing practical security skills.
+                </p>
 
-            <a
-                href="#contact"
-                class="btn btn-outline"
-            >
-                Contact Me
-            </a>
+                <div class="buttons">
 
-        </div>
+                    <a href="#projects" class="btn primary">
+                        View Projects
+                    </a>
 
+                    <a href="#contact" class="btn">
+                        Contact Me
+                    </a>
 
-        <!-- TERMINAL -->
+                </div>
 
-        <div class="terminal">
-
-            <div class="terminal-head">
-                ● ● ● &nbsp; kaizen@cyber: ~
             </div>
 
-            <div
-                class="terminal-body"
-                id="terminalOutput"
-            >
 
-                <div>
-                    <span class="prompt">
-                        kaizen@cyber:~$
-                    </span>
+            <div class="terminal">
 
-                    whoami
+                <div class="terminal-header">
+                    kaizen@cyber: ~
                 </div>
 
-                <div style="margin-bottom:15px;">
-                    cybersecurity student |
-                    linux learner |
-                    future security specialist
-                </div>
+                <div class="terminal-body">
 
-                <div>
+                    <div class="terminal-line">
+                        $ whoami
+                    </div>
 
-                    <span class="prompt">
-                        kaizen@cyber:~$
-                    </span>
+                    <div class="terminal-line terminal-muted">
+                        Kaizen
+                    </div>
 
-                    <input
-                        id="terminalInput"
-                        type="text"
-                        autocomplete="off"
-                        placeholder="type 'help'"
-                    >
+                    <div class="terminal-line">
+                        $ role
+                    </div>
+
+                    <div class="terminal-line terminal-muted">
+                        Cybersecurity Student
+                    </div>
+
+                    <div class="terminal-line">
+                        $ interests
+                    </div>
+
+                    <div class="terminal-line terminal-muted">
+                        Linux · Networking · Security · Programming
+                    </div>
+
+                    <div class="terminal-line">
+                        $ status
+                    </div>
+
+                    <div class="terminal-line terminal-muted">
+                        Learning & Building...
+                    </div>
+
+                    <span class="cursor"></span>
 
                 </div>
 
@@ -939,44 +821,80 @@
      ABOUT
 ========================= -->
 
-<section
-    id="about"
-    class="reveal"
->
+<section id="about" class="reveal">
 
-    <div class="section-title">
+    <div class="container">
 
-        <h2>
-            About <span>Me</span>
-        </h2>
+        <div class="section-title">
 
-        <p>
-            // my journey into cybersecurity
-        </p>
+            <h2>
+                About <span>Me</span>
+            </h2>
 
-    </div>
+            <p>
+                // my journey into technology & cybersecurity
+            </p>
+
+        </div>
 
 
-    <div class="about">
+        <div class="about">
 
-        <p>
-            My journey into technology started at an early age.
-            I was curious about how computers worked and how things were
-            connected behind the screen. As I grew older, that curiosity
-            developed into an interest in programming, Linux, networking,
-            and eventually cybersecurity.
-        </p>
+            <p>
+                I was born in Sirdarya on December 12, 2008.
+                I studied at School No. 35 and graduated in 2026.
+            </p>
 
-        <br>
+            <br>
 
-        <p>
-            Today, I'm studying
-            <strong>
-                Cybersecurity Management at Cyber University
-            </strong>
-            and building my skills through practical projects,
-            security labs and continuous learning.
-        </p>
+            <p>
+                Since childhood, I have been genuinely interested in technology.
+                This curiosity motivated me to start learning programming,
+                which led me to join <strong>Najot Ta'lim</strong>.
+                I studied there for four months, followed by one month
+                focused on cybersecurity.
+            </p>
+
+            <br>
+
+            <p>
+                I eventually decided to continue my cybersecurity journey
+                independently. I discovered free educational resources
+                and started exploring cybersecurity through online courses,
+                videos, and practical learning. This experience taught me
+                that learning does not always have to happen inside a
+                classroom — curiosity and consistency can take you a long way.
+            </p>
+
+            <br>
+
+            <p>
+                After graduating from school, I carefully considered
+                my university options. While following the latest
+                developments in technology and education, I discovered
+                <strong>Cyber University</strong>. The university caught
+                my attention because of its focus on technology and
+                cybersecurity, as well as its connection with the government.
+            </p>
+
+            <br>
+
+            <p>
+                Choosing <strong>Cyber University</strong> became an important
+                step in my journey into technology and cybersecurity.
+                Today, I am continuing to develop my knowledge in
+                cybersecurity, Linux, networking, programming,
+                and information technologies.
+            </p>
+
+            <br>
+
+            <p>
+                Thank you for visiting my website and taking the time
+                to learn more about me.
+            </p>
+
+        </div>
 
     </div>
 
@@ -987,107 +905,125 @@
      SKILLS
 ========================= -->
 
-<section
-    id="skills"
-    class="reveal"
->
+<section id="skills" class="reveal">
 
-    <div class="section-title">
+    <div class="container">
 
-        <h2>
-            Skills & <span>Technologies</span>
-        </h2>
+        <div class="section-title">
 
-        <p>
-            // tools and areas I'm learning
-        </p>
-
-    </div>
-
-
-    <div class="skills-grid">
-
-
-        <div class="skill-card">
-
-            <h3>
-                01 // Cybersecurity
-            </h3>
+            <h2>
+                My <span>Skills</span>
+            </h2>
 
             <p>
-                Cybersecurity fundamentals, security concepts,
-                vulnerability awareness and ethical security practices.
+                // technologies & areas I am developing
             </p>
 
         </div>
 
 
-        <div class="skill-card">
+        <div class="skills-grid">
 
-            <h3>
-                02 // Linux
-            </h3>
+            <div class="skill-card">
 
-            <p>
-                Linux command line, system administration basics,
-                permissions, processes and security tools.
-            </p>
+                <div class="skill-number">
+                    01 //
+                </div>
 
-        </div>
+                <h3>Cybersecurity</h3>
 
+                <p>
+                    Learning security fundamentals,
+                    vulnerabilities, security concepts
+                    and defensive practices.
+                </p>
 
-        <div class="skill-card">
-
-            <h3>
-                03 // Networking
-            </h3>
-
-            <p>
-                TCP/IP, OSI model, ports, protocols, LAN/WAN,
-                DNS and fundamental network security.
-            </p>
-
-        </div>
+            </div>
 
 
-        <div class="skill-card">
+            <div class="skill-card">
 
-            <h3>
-                04 // Programming
-            </h3>
+                <div class="skill-number">
+                    02 //
+                </div>
 
-            <p>
-                Web development fundamentals, programming logic,
-                HTML, CSS, JavaScript and continuous coding practice.
-            </p>
+                <h3>Linux</h3>
 
-        </div>
+                <p>
+                    Working with Linux environments,
+                    terminal commands, system information
+                    and basic administration.
+                </p>
 
-
-        <div class="skill-card">
-
-            <h3>
-                05 // Security Labs
-            </h3>
-
-            <p>
-                Practical learning through controlled labs,
-                cybersecurity platforms and authorized environments.
-            </p>
-
-        </div>
+            </div>
 
 
-        <div class="skill-card">
+            <div class="skill-card">
 
-            <h3>
-                06 // Git & GitHub
-            </h3>
+                <div class="skill-number">
+                    03 //
+                </div>
 
-            <p>
-                Version control, repositories, project management
-                and maintaining a professional coding portfolio.
-            </p>
+                <h3>Networking</h3>
+
+                <p>
+                    Studying networks, protocols,
+                    IP addresses, ports, OSI model
+                    and network security.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    04 //
+                </div>
+
+                <h3>Programming</h3>
+
+                <p>
+                    Developing programming fundamentals
+                    and building small web and
+                    technology projects.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    05 //
+                </div>
+
+                <h3>Security Labs</h3>
+
+                <p>
+                    Practicing cybersecurity through
+                    legal labs, CTF platforms and
+                    hands-on environments.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    06 //
+                </div>
+
+                <h3>Git & GitHub</h3>
+
+                <p>
+                    Using Git and GitHub to manage
+                    projects, source code and
+                    personal development work.
+                </p>
+
+            </div>
 
         </div>
 
@@ -1097,110 +1033,108 @@
 
 
 <!-- =========================
-     LEARNING JOURNEY
+     JOURNEY
 ========================= -->
 
-<section
-    id="education"
-    class="reveal"
->
+<section id="education" class="reveal">
 
-    <div class="section-title">
+    <div class="container">
 
-        <h2>
-            My Learning <span>Journey</span>
-        </h2>
+        <div class="section-title">
 
-        <p>
-            // education, courses & continuous growth
-        </p>
-
-    </div>
-
-
-    <div class="timeline">
-
-
-        <!-- CYBER UNIVERSITY -->
-
-        <div class="timeline-item">
-
-            <div class="date">
-                2026 — Present
-            </div>
-
-            <h3>
-                Cyber University
-            </h3>
+            <h2>
+                My Learning <span>Journey</span>
+            </h2>
 
             <p>
-                Currently studying Cybersecurity Management.
-                Developing knowledge in cybersecurity, networking,
-                Linux, information technologies and security practices.
+                // education, courses & continuous growth
             </p>
 
         </div>
 
 
-        <!-- NAJOT TA'LIM -->
+        <div class="timeline">
 
-        <div class="timeline-item">
 
-            <div class="date">
-                2026 · 5 Months
+            <div class="timeline-item">
+
+                <div class="date">
+                    2026 — Present
+                </div>
+
+                <h3>
+                    Cyber University
+                </h3>
+
+                <p>
+                    Currently studying Cybersecurity Management.
+                    Developing knowledge in cybersecurity,
+                    networking, Linux, information technologies
+                    and security practices.
+                </p>
+
             </div>
 
-            <h3>
-                Najot Ta'lim
-            </h3>
 
-            <p>
-                Completed a 5-month IT learning journey,
-                developing practical knowledge in networking,
-                Linux, programming fundamentals and cybersecurity.
-            </p>
+            <div class="timeline-item">
 
-        </div>
+                <div class="date">
+                    2026 · 5 Months
+                </div>
 
+                <h3>
+                    Najot Ta'lim
+                </h3>
 
-        <!-- IELTS ZONE -->
+                <p>
+                    Completed a 5-month IT learning journey.
+                    Studied programming and IT fundamentals
+                    for four months, followed by one month
+                    focused on cybersecurity.
+                </p>
 
-        <div class="timeline-item">
-
-            <div class="date">
-                2024 — 2025 · 1 Year 2 Months
             </div>
 
-            <h3>
-                IELTS Zone
-            </h3>
 
-            <p>
-                Studied English for 1 year and 2 months,
-                developing listening, reading, writing and speaking
-                skills for academic and professional communication.
-            </p>
+            <div class="timeline-item">
 
-        </div>
+                <div class="date">
+                    2024 — 2025 · 1 Year 2 Months
+                </div>
 
+                <h3>
+                    IELTS Zone
+                </h3>
 
-        <!-- CONTINUOUS LEARNING -->
+                <p>
+                    Studied English for 1 year and 2 months,
+                    developing listening, reading, writing
+                    and speaking skills for academic and
+                    professional communication.
+                </p>
 
-        <div class="timeline-item">
-
-            <div class="date">
-                Present — Future
             </div>
 
-            <h3>
-                Continuous Learning
-            </h3>
 
-            <p>
-                Continuously improving my cybersecurity and IT skills
-                through practical labs, Linux, networking, programming,
-                personal projects and security platforms.
-            </p>
+            <div class="timeline-item">
+
+                <div class="date">
+                    Present — Future
+                </div>
+
+                <h3>
+                    Continuous Learning
+                </h3>
+
+                <p>
+                    Continuously improving my cybersecurity
+                    and IT skills through practical labs,
+                    Linux, networking, programming, personal
+                    projects and security platforms.
+                </p>
+
+            </div>
+
 
         </div>
 
@@ -1213,104 +1147,87 @@
      PROJECTS
 ========================= -->
 
-<section
-    id="projects"
-    class="reveal"
->
+<section id="projects" class="reveal">
 
-    <div class="section-title">
+    <div class="container">
 
-        <h2>
-            My <span>Projects</span>
-        </h2>
+        <div class="section-title">
 
-        <p>
-            // things I'm building
-        </p>
-
-    </div>
-
-
-    <div class="projects">
-
-
-        <div class="project">
-
-            <div class="project-number">
-                PROJECT_01
-            </div>
-
-            <h3>
-                Cybersecurity Portfolio
-            </h3>
+            <h2>
+                My <span>Projects</span>
+            </h2>
 
             <p>
-                A personal cybersecurity portfolio built to showcase
-                my skills, learning journey, projects and achievements.
+                // things I am building and exploring
             </p>
-
-            <div class="tech">
-
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-
-            </div>
 
         </div>
 
 
-        <div class="project">
+        <div class="projects-grid">
 
-            <div class="project-number">
-                PROJECT_02
+
+            <div class="project-card">
+
+                <div class="project-tag">
+                    WEB / PORTFOLIO
+                </div>
+
+                <h3>
+                    Cybersecurity Portfolio
+                </h3>
+
+                <p>
+                    A personal cybersecurity portfolio website
+                    built with HTML, CSS and JavaScript to
+                    showcase my skills, journey, projects
+                    and learning progress.
+                </p>
+
             </div>
 
-            <h3>
-                Marshrut
-            </h3>
 
-            <p>
-                A concept for a smart marshrutka application that helps
-                passengers see routes, estimated arrival times and available seats.
-            </p>
+            <div class="project-card">
 
-            <div class="tech">
+                <div class="project-tag">
+                    PRODUCT / UI / UX
+                </div>
 
-                <span>UI/UX</span>
-                <span>Web</span>
-                <span>Product</span>
+                <h3>
+                    Marshrut
+                </h3>
+
+                <p>
+                    A concept for a marshrutka tracking platform
+                    designed to help passengers see vehicle
+                    locations, estimated arrival times and
+                    available seats.
+                </p>
 
             </div>
+
+
+            <div class="project-card">
+
+                <div class="project-tag">
+                    CYBERSECURITY / LABS
+                </div>
+
+                <h3>
+                    Cybersecurity Labs
+                </h3>
+
+                <p>
+                    Practical learning through Linux,
+                    networking, security labs, CTF environments
+                    and other legal cybersecurity practice
+                    platforms.
+                </p>
+
+            </div>
+
 
         </div>
-
-
-        <div class="project">
-
-            <div class="project-number">
-                PROJECT_03
-            </div>
-
-            <h3>
-                Cybersecurity Labs
-            </h3>
-
-            <p>
-                Practical cybersecurity learning through authorized
-                environments, Linux practice and security laboratories.
-            </p>
-
-            <div class="tech">
-
-                <span>Linux</span>
-                <span>Networking</span>
-                <span>Security</span>
-
-            </div>
-
-        </div>
-
 
     </div>
 
@@ -1321,98 +1238,79 @@
      ACHIEVEMENTS
 ========================= -->
 
-<section
-    id="achievements"
-    class="reveal"
->
+<section id="achievements" class="reveal">
 
-    <div class="section-title">
+    <div class="container">
 
-        <h2>
-            Achievements & <span>Certifications</span>
-        </h2>
+        <div class="section-title">
 
-        <p>
-            // milestones along the journey
-        </p>
-
-    </div>
-
-
-    <div class="achievements">
-
-
-        <div class="achievement">
-
-            <div class="achievement-icon">
-                🏆
-            </div>
-
-            <h3>
-                IELTS
-            </h3>
+            <h2>
+                My <span>Achievements</span>
+            </h2>
 
             <p>
-                English language certification and continuous improvement
-                in academic and professional communication.
+                // milestones in my learning journey
             </p>
 
         </div>
 
 
-        <div class="achievement">
+        <div class="achievements">
 
-            <div class="achievement-icon">
-                🛡️
+
+            <div class="achievement">
+
+                <div class="achievement-number">
+                    IELTS
+                </div>
+
+                <p>
+                    English language certification
+                </p>
+
             </div>
 
-            <h3>
-                Cybersecurity Learning
-            </h3>
 
-            <p>
-                Developing practical cybersecurity knowledge through
-                labs, Linux and networking practice.
-            </p>
+            <div class="achievement">
 
-        </div>
+                <div class="achievement-number">
+                    5M
+                </div>
 
+                <p>
+                    IT & cybersecurity learning
+                </p>
 
-        <div class="achievement">
-
-            <div class="achievement-icon">
-                💻
             </div>
 
-            <h3>
-                Programming
-            </h3>
 
-            <p>
-                Building web and programming projects while developing
-                a stronger technical foundation.
-            </p>
+            <div class="achievement">
 
-        </div>
+                <div class="achievement-number">
+                    CYBER
+                </div>
 
+                <p>
+                    Cybersecurity learning journey
+                </p>
 
-        <div class="achievement">
-
-            <div class="achievement-icon">
-                🎓
             </div>
 
-            <h3>
-                Cyber University
-            </h3>
 
-            <p>
-                Studying Cybersecurity Management and developing
-                professional skills for a career in cybersecurity.
-            </p>
+            <div class="achievement">
+
+                <div class="achievement-number">
+                    2026
+                </div>
+
+                <p>
+                    Started university journey
+                </p>
+
+            </div>
+
 
         </div>
-
 
     </div>
 
@@ -1423,68 +1321,52 @@
      CONTACT
 ========================= -->
 
-<section
-    id="contact"
-    class="reveal"
->
+<section id="contact" class="reveal">
 
-    <div class="section-title">
+    <div class="container">
 
-        <h2>
-            Get In <span>Touch</span>
-        </h2>
+        <div class="contact-box">
 
-        <p>
-            // let's connect
-        </p>
+            <h2>
+                Let's <span>Connect</span>
+            </h2>
 
-    </div>
+            <p>
+                Interested in technology, cybersecurity
+                or collaboration? Feel free to reach out.
+            </p>
 
 
-    <div class="contact-box">
+            <div class="socials">
 
-        <p>
-            Interested in cybersecurity, technology or collaboration?
-            Feel free to reach out through any of my platforms.
-        </p>
+                <a
+                    href="https://github.com/xushnudxudoyberdiev25-sys"
+                    target="_blank"
+                >
+                    GitHub
+                </a>
 
+                <a
+                    href="https://t.me/xush_me"
+                    target="_blank"
+                >
+                    Telegram
+                </a>
 
-        <div class="socials">
+                <a
+                    href="https://instagram.com/ka1zen.x_"
+                    target="_blank"
+                >
+                    Instagram
+                </a>
 
+                <a
+                    href="mailto:xushnudxudoyberdiev25@gmail.com"
+                >
+                    Email
+                </a>
 
-            <a
-                href="https://github.com/xushnudxudoyberdiev25-sys"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                GitHub
-            </a>
-
-
-            <a
-                href="https://t.me/xush_me"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Telegram
-            </a>
-
-
-            <a
-                href="https://instagram.com/ka1zen.x_"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Instagram
-            </a>
-
-
-            <a
-                href="mailto:xushnudxudoyberdiev25@gmail.com"
-            >
-                Email
-            </a>
-
+            </div>
 
         </div>
 
@@ -1499,264 +1381,178 @@
 
 <footer>
 
-    <p>
-        © 2026
-        <span>Kaizen</span>.
-        Built with curiosity & code.
-    </p>
+    © 2026 Kaizen. Built with curiosity & code.
 
 </footer>
 
 
 <script>
 
-    /* =========================
-       DARK / LIGHT MODE
-    ========================= */
+/* =========================
+   THEME
+========================= */
 
-    function toggleTheme() {
+function toggleTheme() {
 
-        document.body.classList.toggle("light");
+    document.body.classList.toggle("light");
 
-        localStorage.setItem(
-            "theme",
-            document.body.classList.contains("light")
-                ? "light"
-                : "dark"
-        );
+    if (document.body.classList.contains("light")) {
 
-    }
+        localStorage.setItem("theme", "light");
 
+    } else {
 
-    if (
-        localStorage.getItem("theme") === "light"
-    ) {
-
-        document.body.classList.add("light");
+        localStorage.setItem("theme", "dark");
 
     }
 
-
-    /* =========================
-       INTERACTIVE TERMINAL
-    ========================= */
-
-    const terminalOutput =
-        document.getElementById("terminalOutput");
+}
 
 
-    function createTerminal() {
+if (localStorage.getItem("theme") === "light") {
 
-        const input =
-            document.getElementById("terminalInput");
+    document.body.classList.add("light");
 
-
-        input.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (event.key !== "Enter") {
-                    return;
-                }
+}
 
 
-                const command =
-                    input.value.trim().toLowerCase();
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
 
 
-                if (command === "") {
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
 
-                    input.value = "";
+            entries.forEach((entry) => {
 
-                    return;
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
 
                 }
 
-
-                const line =
-                    document.createElement("div");
-
-
-                line.innerHTML =
-                    `<span class="prompt">
-                        kaizen@cyber:~$
-                    </span> ${command}`;
-
-
-                terminalOutput.insertBefore(
-                    line,
-                    input.parentElement
-                );
-
-
-                let response = "";
-
-
-                if (command === "help") {
-
-                    response =
-                        "Available commands: help, about, skills, projects, journey, contact, clear";
-
-                }
-
-
-                else if (command === "about") {
-
-                    response =
-                        "Cybersecurity student focused on Linux, networking, programming and security.";
-
-                }
-
-
-                else if (command === "skills") {
-
-                    response =
-                        "Cybersecurity | Linux | Networking | Programming | Git | Web";
-
-                }
-
-
-                else if (command === "projects") {
-
-                    response =
-                        "Portfolio | Marshrut | Cybersecurity Labs";
-
-                }
-
-
-                else if (command === "journey") {
-
-                    response =
-                        "Cyber University | Najot Ta'lim | IELTS Zone | Continuous Learning";
-
-                }
-
-
-                else if (command === "contact") {
-
-                    response =
-                        "GitHub | Telegram | Instagram | Email";
-
-                }
-
-
-                else if (command === "clear") {
-
-                    terminalOutput.innerHTML = `
-
-                        <div>
-
-                            <span class="prompt">
-                                kaizen@cyber:~$
-                            </span>
-
-                            <input
-                                id="terminalInput"
-                                type="text"
-                                autocomplete="off"
-                                placeholder="type 'help'"
-                            >
-
-                        </div>
-
-                    `;
-
-
-                    createTerminal();
-
-                    return;
-
-                }
-
-
-                else {
-
-                    response =
-                        `Command not found: ${command}. Type "help" for available commands.`;
-
-                }
-
-
-                const result =
-                    document.createElement("div");
-
-
-                result.style.marginBottom =
-                    "12px";
-
-
-                result.textContent =
-                    response;
-
-
-                terminalOutput.insertBefore(
-                    result,
-                    input.parentElement
-                );
-
-
-                input.value = "";
-
-                input.focus();
-
-            }
-        );
-
-
-        input.focus();
-
-    }
-
-
-    createTerminal();
-
-
-    /* =========================
-       SCROLL ANIMATIONS
-    ========================= */
-
-    const reveals =
-        document.querySelectorAll(".reveal");
-
-
-    function revealOnScroll() {
-
-        reveals.forEach(
-            element => {
-
-                const windowHeight =
-                    window.innerHeight;
-
-
-                const elementTop =
-                    element.getBoundingClientRect().top;
-
-
-                if (
-                    elementTop <
-                    windowHeight - 100
-                ) {
-
-                    element.classList.add("active");
-
-                }
-
-            }
-        );
-
-    }
-
-
-    window.addEventListener(
-        "scroll",
-        revealOnScroll
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
     );
 
 
-    revealOnScroll();
+revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================
+   TERMINAL COMMANDS
+========================= */
+
+const terminalOutput = {
+
+    help: `
+Available commands:
+
+about       → About me
+skills      → My skills
+projects    → My projects
+journey     → My learning journey
+contact     → Contact information
+clear       → Clear terminal
+`,
+
+    about: `
+Kaizen (Khushnud)
+Cybersecurity Student
+
+Interested in cybersecurity,
+Linux, networking and programming.
+`,
+
+    skills: `
+Cybersecurity
+Linux
+Networking
+Programming
+Security Labs
+Git & GitHub
+`,
+
+    projects: `
+01. Cybersecurity Portfolio
+02. Marshrut
+03. Cybersecurity Labs
+`,
+
+    journey: `
+2026 — Present
+Cyber University
+
+2026 · 5 Months
+Najot Ta'lim
+
+2024 — 2025 · 1 Year 2 Months
+IELTS Zone
+
+Present — Future
+Continuous Learning
+`,
+
+    contact: `
+GitHub:
+github.com/xushnudxudoyberdiev25-sys
+
+Telegram:
+t.me/xush_me
+
+Instagram:
+instagram.com/ka1zen.x_
+
+Email:
+xushnudxudoyberdiev25@gmail.com
+`
+
+};
+
+
+function createTerminal() {
+
+    const terminal =
+        document.querySelector(".terminal-body");
+
+    if (!terminal) return;
+
+}
+
+
+/* =========================
+   CONSOLE EASTER MESSAGE
+========================= */
+
+console.log(
+    "%cKAIZEN_",
+    "color:#00ff88;font-size:30px;font-weight:bold;"
+);
+
+console.log(
+    "%cWelcome to my cybersecurity portfolio.",
+    "color:#8da99b;font-size:14px;"
+);
+
+console.log(
+    "%cKeep learning. Keep building.",
+    "color:#00ff88;font-size:14px;"
+);
 
 </script>
 
 </body>
 </html>
-```
