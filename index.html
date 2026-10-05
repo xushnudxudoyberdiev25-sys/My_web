@@ -2590,6 +2590,12 @@ body.light .login-field input {
 </footer>
 
 
+<!-- Firebase SDK for online News -->
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-storage-compat.js"></script>
+
 <script>
 
 /* =========================
@@ -2702,7 +2708,45 @@ console.log(
 ========================= */
 
 const ADMIN_USERNAME = "Xushnud_";
-const ADMIN_PASSWORD = "XuShnud@";
+
+/* =========================
+   FIREBASE ONLINE NEWS SETUP
+========================= */
+
+const FIREBASE_ADMIN_EMAIL = "YOUR_ADMIN_EMAIL@example.com";
+
+const FIREBASE_CONFIG = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.firebasestorage.app",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+const FIREBASE_CONFIG_READY =
+    !Object.values(FIREBASE_CONFIG).some(value =>
+        String(value).includes("YOUR_")
+    ) &&
+    !FIREBASE_ADMIN_EMAIL.includes("YOUR_");
+
+let firebaseReady = false;
+let db = null;
+let storage = null;
+
+if (typeof firebase !== "undefined" && FIREBASE_CONFIG_READY) {
+    try {
+        if (!firebase.apps.length) {
+            firebase.initializeApp(FIREBASE_CONFIG);
+        }
+
+        db = firebase.firestore();
+        storage = firebase.storage();
+        firebaseReady = true;
+    } catch (error) {
+        console.error("Firebase initialization failed:", error);
+    }
+}
 
 function enterAsGuest() {
     const entryScreen = document.getElementById("entryScreen");
@@ -2731,7 +2775,7 @@ function backToEntryChoices() {
     document.getElementById("loginError").textContent = "";
 }
 
-function adminLogin(event) {
+async function adminLogin(event) {
     event.preventDefault();
 
     const username =
@@ -2743,35 +2787,41 @@ function adminLogin(event) {
     const error =
         document.getElementById("loginError");
 
-    if (
-        username === ADMIN_USERNAME &&
-        password === ADMIN_PASSWORD
-    ) {
+    if (username !== ADMIN_USERNAME) {
+        error.textContent =
+            "Access denied. Incorrect username or password.";
+        document.getElementById("adminPassword").value = "";
+        return;
+    }
+
+    if (!firebaseReady) {
+        error.textContent =
+            "Online News is not configured yet. Add Firebase config first.";
+        return;
+    }
+
+    try {
+        await firebase.auth().signInWithEmailAndPassword(
+            FIREBASE_ADMIN_EMAIL,
+            password
+        );
+
         error.textContent = "";
-
         sessionStorage.setItem("adminLoggedIn", "true");
-
         document.body.classList.remove("entry-locked");
-
-        document
-            .getElementById("entryScreen")
-            .classList.add("hidden");
-
-        document
-            .getElementById("adminBadge")
-            .classList.add("visible");
-
+        document.getElementById("entryScreen").classList.add("hidden");
+        document.getElementById("adminBadge").classList.add("visible");
         updateNewsAdminUI();
+        await renderNews();
 
         console.log(
             "%cADMIN ACCESS GRANTED_",
             "color:#00ff88;font-size:18px;font-weight:bold;"
         );
-
-    } else {
+    } catch (authError) {
+        console.error(authError);
         error.textContent =
             "Access denied. Incorrect username or password.";
-
         document.getElementById("adminPassword").value = "";
     }
 }
@@ -2795,23 +2845,14 @@ if (sessionStorage.getItem("adminLoggedIn") === "true") {
    NEWS SYSTEM
 ========================= */
 
-const NEWS_STORAGE_KEY = "kaizenNews";
+const NEWS_COLLECTION = "news";
 
-function getNews() {
+function getLocalNewsFallback() {
     try {
-        return JSON.parse(
-            localStorage.getItem(NEWS_STORAGE_KEY) || "[]"
-        );
+        return JSON.parse(localStorage.getItem("kaizenNews") || "[]");
     } catch (error) {
         return [];
     }
-}
-
-function saveNews(news) {
-    localStorage.setItem(
-        NEWS_STORAGE_KEY,
-        JSON.stringify(news)
-    );
 }
 
 function escapeHtml(value) {
@@ -2823,12 +2864,62 @@ function escapeHtml(value) {
         .replace(/'/g, "&#039;");
 }
 
-function renderNews() {
-    const grid = document.getElementById("newsGrid");
+function formatNewsDate(timestamp, fallback) {
+    try {
+        if (timestamp && typeof timestamp.toDate === "function") {
+            return timestamp.toDate().toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            });
+        }
+    } catch (error) {}
 
+    return fallback || "";
+}
+
+async function getNews() {
+    if (!firebaseReady || !db) {
+        return getLocalNewsFallback();
+    }
+
+    try {
+        const snapshot = await db
+            .collection(NEWS_COLLECTION)
+            .orderBy("createdAt", "desc")
+            .get();
+
+        return snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+    } catch (error) {
+        console.error("Could not load online news:", error);
+        return [];
+    }
+}
+
+async function renderNews() {
+    const grid = document.getElementById("newsGrid");
     if (!grid) return;
 
-    const news = getNews();
+    if (!firebaseReady) {
+        grid.innerHTML = `
+            <div class="news-empty">
+                // Online News is not configured yet.
+            </div>
+        `;
+        updateNewsAdminUI();
+        return;
+    }
+
+    grid.innerHTML = `
+        <div class="news-empty">
+            // Loading news...
+        </div>
+    `;
+
+    const news = await getNews();
 
     if (!news.length) {
         grid.innerHTML = `
@@ -2836,47 +2927,43 @@ function renderNews() {
                 // No news published yet.
             </div>
         `;
+        updateNewsAdminUI();
         return;
     }
 
+    const isAdmin =
+        sessionStorage.getItem("adminLoggedIn") === "true";
+
     grid.innerHTML = news.map((item) => `
         <article class="news-card reveal active">
-
             <div class="news-image-wrap">
                 <img
                     class="news-image"
-                    src="${item.image}"
-                    alt="${escapeHtml(item.title)}"
+                    src="${escapeHtml(item.imageUrl || "")}"
+                    alt="${escapeHtml(item.title || "News")}"
                     loading="lazy"
                 >
             </div>
 
             <div class="news-content">
-
                 <div class="news-date">
-                    ${escapeHtml(item.date)}
+                    ${escapeHtml(formatNewsDate(item.createdAt, item.date))}
                 </div>
 
-                <h3>
-                    ${escapeHtml(item.title)}
-                </h3>
+                <h3>${escapeHtml(item.title || "")}</h3>
 
-                <p>
-                    ${escapeHtml(item.text)}
-                </p>
+                <p>${escapeHtml(item.text || "")}</p>
 
-                <button
-                    type="button"
-                    class="news-delete-btn"
-                    data-news-id="${item.id}"
-                    onclick="deleteNews('${item.id}')"
-                    style="display:none"
-                >
-                    Delete
-                </button>
-
+                ${isAdmin ? `
+                    <button
+                        type="button"
+                        class="news-delete-btn"
+                        onclick="deleteNews('${escapeHtml(item.id)}')"
+                    >
+                        Delete
+                    </button>
+                ` : ""}
             </div>
-
         </article>
     `).join("");
 
@@ -2892,24 +2979,17 @@ function updateNewsAdminUI() {
     if (panel) {
         panel.classList.toggle("visible", isAdmin);
     }
-
-    document.querySelectorAll(".news-delete-btn").forEach((button) => {
-        button.style.display = isAdmin ? "inline-block" : "none";
-    });
 }
 
 function compressNewsImage(file) {
     return new Promise((resolve, reject) => {
-
         const reader = new FileReader();
 
         reader.onload = (event) => {
-
             const image = new Image();
 
             image.onload = () => {
-
-                const maxSize = 1400;
+                const maxSize = 1600;
                 let width = image.width;
                 let height = image.height;
 
@@ -2918,7 +2998,6 @@ function compressNewsImage(file) {
                         maxSize / width,
                         maxSize / height
                     );
-
                     width = Math.round(width * ratio);
                     height = Math.round(height * ratio);
                 }
@@ -2930,8 +3009,13 @@ function compressNewsImage(file) {
                 const context = canvas.getContext("2d");
                 context.drawImage(image, 0, 0, width, height);
 
-                resolve(
-                    canvas.toDataURL("image/jpeg", 0.82)
+                canvas.toBlob(
+                    (blob) => {
+                        if (blob) resolve(blob);
+                        else reject(new Error("Could not compress image."));
+                    },
+                    "image/jpeg",
+                    0.84
                 );
             };
 
@@ -2947,56 +3031,66 @@ function compressNewsImage(file) {
 async function publishNews(event) {
     event.preventDefault();
 
-    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+    const status = document.getElementById("newsStatus");
+
+    if (!firebaseReady || !db || !storage) {
+        status.textContent =
+            "Online News is not configured yet. Add Firebase first.";
         return;
     }
 
-    const title =
-        document.getElementById("newsTitle").value.trim();
+    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+        status.textContent = "Admin access required.";
+        return;
+    }
 
-    const text =
-        document.getElementById("newsText").value.trim();
+    const currentUser = firebase.auth().currentUser;
 
-    const imageInput =
-        document.getElementById("newsImage");
+    if (!currentUser ||
+        currentUser.email.toLowerCase() !== FIREBASE_ADMIN_EMAIL.toLowerCase()) {
+        status.textContent = "Firebase admin authentication required.";
+        return;
+    }
 
-    const status =
-        document.getElementById("newsStatus");
+    const title = document.getElementById("newsTitle").value.trim();
+    const text = document.getElementById("newsText").value.trim();
+    const imageInput = document.getElementById("newsImage");
 
     if (!title || !text || !imageInput.files.length) {
         status.textContent = "Please add title, text and an image.";
         return;
     }
 
-    status.textContent = "Publishing...";
+    status.textContent = "Uploading image and publishing...";
 
     try {
-        const image = await compressNewsImage(
-            imageInput.files[0]
-        );
+        const blob = await compressNewsImage(imageInput.files[0]);
+        const fileId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}.jpg`;
+        const storagePath = `news/${fileId}`;
+        const storageRef = storage.ref(storagePath);
 
-        const news = getNews();
-
-        news.unshift({
-            id: Date.now().toString(),
-            title,
-            text,
-            image,
-            date: new Date().toLocaleDateString("en-GB", {
-                day: "2-digit",
-                month: "short",
-                year: "numeric"
-            })
+        await storageRef.put(blob, {
+            contentType: "image/jpeg",
+            cacheControl: "public,max-age=31536000"
         });
 
-        saveNews(news);
-        renderNews();
-        clearNewsForm();
+        const imageUrl = await storageRef.getDownloadURL();
 
-        status.textContent = "News published successfully.";
+        await db.collection(NEWS_COLLECTION).add({
+            title,
+            text,
+            imageUrl,
+            storagePath,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+
+        clearNewsForm();
+        status.textContent = "News published successfully online.";
+        await renderNews();
     } catch (error) {
+        console.error("Publish failed:", error);
         status.textContent =
-            "Could not publish this image. Try another image.";
+            "Publish failed. Check Firebase setup and security rules.";
     }
 }
 
@@ -3015,32 +3109,47 @@ function clearNewsForm() {
     if (status) status.textContent = "";
 }
 
-function deleteNews(id) {
-    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
-        return;
+async function deleteNews(id) {
+    if (!firebaseReady || !db) return;
+    if (sessionStorage.getItem("adminLoggedIn") !== "true") return;
+    if (!confirm("Delete this news post?")) return;
+
+    try {
+        const docRef = db.collection(NEWS_COLLECTION).doc(String(id));
+        const snapshot = await docRef.get();
+
+        if (!snapshot.exists) return;
+
+        const item = snapshot.data();
+        await docRef.delete();
+
+        if (storage && item.storagePath) {
+            try {
+                await storage.ref(item.storagePath).delete();
+            } catch (storageError) {
+                console.warn("Image deletion failed:", storageError);
+            }
+        }
+
+        await renderNews();
+    } catch (error) {
+        console.error("Delete failed:", error);
+        alert("Could not delete this news item.");
     }
-
-    if (!confirm("Delete this news post?")) {
-        return;
-    }
-
-    const news = getNews().filter(
-        (item) => item.id !== String(id)
-    );
-
-    saveNews(news);
-    renderNews();
 }
 
-function adminLogout() {
+async function adminLogout() {
+    try {
+        if (firebaseReady && firebase.auth().currentUser) {
+            await firebase.auth().signOut();
+        }
+    } catch (error) {
+        console.error("Logout failed:", error);
+    }
+
     sessionStorage.removeItem("adminLoggedIn");
-
-    document
-        .getElementById("adminBadge")
-        ?.classList.remove("visible");
-
+    document.getElementById("adminBadge")?.classList.remove("visible");
     updateNewsAdminUI();
-
     window.location.hash = "news";
 }
 
@@ -3048,19 +3157,16 @@ const newsImageInput = document.getElementById("newsImage");
 
 if (newsImageInput) {
     newsImageInput.addEventListener("change", () => {
-
         const file = newsImageInput.files[0];
         const preview = document.getElementById("newsPreview");
 
         if (!file || !preview) return;
 
         const reader = new FileReader();
-
         reader.onload = (event) => {
             preview.src = event.target.result;
             preview.style.display = "block";
         };
-
         reader.readAsDataURL(file);
     });
 }
