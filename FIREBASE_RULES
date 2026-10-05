@@ -1,0 +1,30 @@
+FIRESTORE RULES
+
+Replace ADMIN_EMAIL with the same email used in the HTML FIREBASE_ADMIN_EMAIL value.
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /news/{newsId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null
+        && request.auth.token.email == "ADMIN_EMAIL";
+    }
+  }
+}
+
+
+STORAGE RULES
+
+Replace ADMIN_EMAIL with the same email used in the HTML FIREBASE_ADMIN_EMAIL value.
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /news/{allPaths=**} {
+      allow read: if true;
+      allow write, delete: if request.auth != null
+        && request.auth.token.email == "ADMIN_EMAIL";
+    }
+  }
+}
