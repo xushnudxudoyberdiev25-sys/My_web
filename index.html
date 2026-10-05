@@ -1011,12 +1011,392 @@ footer {
 
 }
 
+
+/* =========================
+   ENTRY / ADMIN ACCESS
+========================= */
+
+body.entry-locked {
+    overflow: hidden;
+}
+
+.entry-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,255,136,0.10), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(0,255,136,0.08), transparent 30%),
+        var(--bg);
+    transition: opacity .45s ease, visibility .45s ease;
+}
+
+.entry-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.entry-box {
+    width: min(460px, 100%);
+    padding: 45px 35px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: rgba(6, 16, 12, 0.82);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 0 55px rgba(0,255,136,0.10);
+    animation: entryIn .7s ease;
+}
+
+body.light .entry-box {
+    background: rgba(255,255,255,0.88);
+}
+
+.entry-logo {
+    color: var(--green);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.entry-logo::after {
+    content: "_";
+    animation: blink 1s infinite;
+}
+
+.entry-subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 35px;
+}
+
+.entry-question {
+    font-size: 18px;
+    margin-bottom: 22px;
+}
+
+.entry-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.entry-choice {
+    min-height: 105px;
+    padding: 20px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(0,255,136,0.025);
+    color: var(--text);
+    cursor: pointer;
+    font-family: inherit;
+    transition: .3s ease;
+}
+
+.entry-choice:hover {
+    transform: translateY(-5px);
+    border-color: var(--green);
+    box-shadow: 0 0 25px var(--shadow);
+    color: var(--green);
+}
+
+.entry-icon {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.entry-label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.entry-description {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.admin-login {
+    display: none;
+}
+
+.admin-login.active {
+    display: block;
+    animation: entryIn .35s ease;
+}
+
+.entry-choice-panel.hidden {
+    display: none;
+}
+
+.login-title {
+    color: var(--green);
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.login-form {
+    text-align: left;
+}
+
+.login-field {
+    margin-bottom: 15px;
+}
+
+.login-field label {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.login-field input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    outline: none;
+    background: rgba(0,0,0,0.25);
+    color: var(--text);
+    font-family: inherit;
+    transition: .25s;
+}
+
+body.light .login-field input {
+    background: rgba(255,255,255,0.7);
+}
+
+.login-field input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 15px var(--shadow);
+}
+
+.login-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.login-submit,
+.login-back {
+    flex: 1;
+    padding: 12px;
+    border-radius: 7px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.login-submit {
+    border: 1px solid var(--green);
+    background: var(--green);
+    color: #001b0e;
+    font-weight: bold;
+}
+
+.login-submit:hover {
+    box-shadow: 0 0 22px var(--shadow);
+    transform: translateY(-2px);
+}
+
+.login-back {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+}
+
+.login-back:hover {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+.login-error {
+    min-height: 20px;
+    margin-top: 12px;
+    color: #ff6b6b;
+    font-size: 12px;
+    text-align: center;
+}
+
+.admin-badge {
+    display: none;
+    position: fixed;
+    top: 85px;
+    right: 20px;
+    z-index: 90;
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: rgba(6,16,12,.85);
+    color: var(--green);
+    font-size: 11px;
+    backdrop-filter: blur(10px);
+}
+
+.admin-badge.visible {
+    display: block;
+}
+
+@keyframes entryIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 520px) {
+    .entry-box {
+        padding: 35px 22px;
+    }
+
+    .entry-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .entry-choice {
+        min-height: 90px;
+    }
+}
+
 </style>
 
 </head>
 
 
-<body>
+<body class="entry-locked">
+
+
+<!-- =========================
+     ENTRY SCREEN
+========================= -->
+
+<div class="entry-screen" id="entryScreen">
+
+    <div class="entry-box">
+
+        <div class="entry-logo">KAIZEN</div>
+
+        <div class="entry-subtitle">
+            cybersecurity portfolio // access portal
+        </div>
+
+        <!-- GUEST / ADMIN CHOICE -->
+
+        <div id="entryChoicePanel">
+
+            <div class="entry-question">
+                Who are you?
+            </div>
+
+            <div class="entry-buttons">
+
+                <button class="entry-choice" onclick="enterAsGuest()">
+                    <span class="entry-icon">👤</span>
+                    <span class="entry-label">GUEST</span>
+                    <span class="entry-description">
+                        Enter the website
+                    </span>
+                </button>
+
+                <button class="entry-choice" onclick="showAdminLogin()">
+                    <span class="entry-icon">🔐</span>
+                    <span class="entry-label">ADMIN</span>
+                    <span class="entry-description">
+                        Restricted access
+                    </span>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ADMIN LOGIN -->
+
+        <div class="admin-login" id="adminLoginPanel">
+
+            <div class="login-title">
+                ADMIN ACCESS
+            </div>
+
+            <div class="login-subtitle">
+                Enter your credentials to continue
+            </div>
+
+            <form class="login-form" onsubmit="adminLogin(event)">
+
+                <div class="login-field">
+                    <label for="adminUsername">Username</label>
+                    <input
+                        type="text"
+                        id="adminUsername"
+                        autocomplete="username"
+                        placeholder="Enter username"
+                        required
+                    >
+                </div>
+
+                <div class="login-field">
+                    <label for="adminPassword">Password</label>
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        autocomplete="current-password"
+                        placeholder="Enter password"
+                        required
+                    >
+                </div>
+
+                <div class="login-actions">
+
+                    <button
+                        type="button"
+                        class="login-back"
+                        onclick="backToEntryChoices()"
+                    >
+                        Back
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="login-submit"
+                    >
+                        Login
+                    </button>
+
+                </div>
+
+                <div class="login-error" id="loginError"></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="admin-badge" id="adminBadge">
+    ADMIN MODE_
+</div>
+
 
 <div class="network"></div>
 
@@ -1979,6 +2359,97 @@ console.log(
     "%cKeep learning. Keep building.",
     "color:#00ff88;font-size:14px;"
 );
+
+
+/* =========================
+   ENTRY / ADMIN ACCESS
+========================= */
+
+const ADMIN_USERNAME = "Xushnud_";
+const ADMIN_PASSWORD = "XuShnud@";
+
+function enterAsGuest() {
+    const entryScreen = document.getElementById("entryScreen");
+
+    document.body.classList.remove("entry-locked");
+    entryScreen.classList.add("hidden");
+}
+
+function showAdminLogin() {
+    document.getElementById("entryChoicePanel").classList.add("hidden");
+    document.getElementById("adminLoginPanel").classList.add("active");
+
+    document.getElementById("loginError").textContent = "";
+
+    setTimeout(() => {
+        document.getElementById("adminUsername").focus();
+    }, 100);
+}
+
+function backToEntryChoices() {
+    document.getElementById("adminLoginPanel").classList.remove("active");
+    document.getElementById("entryChoicePanel").classList.remove("hidden");
+
+    document.getElementById("adminUsername").value = "";
+    document.getElementById("adminPassword").value = "";
+    document.getElementById("loginError").textContent = "";
+}
+
+function adminLogin(event) {
+    event.preventDefault();
+
+    const username =
+        document.getElementById("adminUsername").value.trim();
+
+    const password =
+        document.getElementById("adminPassword").value;
+
+    const error =
+        document.getElementById("loginError");
+
+    if (
+        username === ADMIN_USERNAME &&
+        password === ADMIN_PASSWORD
+    ) {
+        error.textContent = "";
+
+        sessionStorage.setItem("adminLoggedIn", "true");
+
+        document.body.classList.remove("entry-locked");
+
+        document
+            .getElementById("entryScreen")
+            .classList.add("hidden");
+
+        document
+            .getElementById("adminBadge")
+            .classList.add("visible");
+
+        console.log(
+            "%cADMIN ACCESS GRANTED_",
+            "color:#00ff88;font-size:18px;font-weight:bold;"
+        );
+
+    } else {
+        error.textContent =
+            "Access denied. Incorrect username or password.";
+
+        document.getElementById("adminPassword").value = "";
+    }
+}
+
+/* Keep admin session during the current browser tab session */
+if (sessionStorage.getItem("adminLoggedIn") === "true") {
+    document.body.classList.remove("entry-locked");
+
+    document
+        .getElementById("entryScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("adminBadge")
+        .classList.add("visible");
+}
 
 </script>
 
