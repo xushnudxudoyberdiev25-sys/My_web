@@ -1276,6 +1276,218 @@ body.light .login-field input {
     }
 }
 
+
+
+/* =========================
+   NEWS
+========================= */
+
+.news-section {
+    padding: 110px 0;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.news-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(6,16,12,.72);
+    box-shadow: 0 0 30px rgba(0,255,136,.04);
+    transition: .25s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--green);
+    box-shadow: 0 0 28px var(--shadow);
+}
+
+.news-image-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: rgba(0,255,136,.04);
+}
+
+.news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.news-content {
+    padding: 22px;
+}
+
+.news-date {
+    color: var(--green);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.news-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.news-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+.news-admin-panel {
+    display: none;
+    margin-bottom: 35px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(6,16,12,.78);
+}
+
+.news-admin-panel.visible {
+    display: block;
+}
+
+.news-admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.news-admin-header h3 {
+    margin: 0;
+    color: var(--green);
+}
+
+.news-form {
+    display: grid;
+    gap: 14px;
+}
+
+.news-form input,
+.news-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    outline: none;
+    background: rgba(255,255,255,.04);
+    color: var(--text);
+    font-family: inherit;
+}
+
+.news-form input:focus,
+.news-form textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 15px var(--shadow);
+}
+
+.news-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.news-form input[type="file"] {
+    cursor: pointer;
+}
+
+.news-preview {
+    display: none;
+    max-width: 320px;
+    max-height: 180px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.news-form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.news-publish-btn,
+.news-clear-btn,
+.news-delete-btn {
+    border: 1px solid var(--green);
+    border-radius: 7px;
+    padding: 10px 16px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.news-publish-btn {
+    background: var(--green);
+    color: #001b0e;
+    font-weight: bold;
+}
+
+.news-clear-btn,
+.news-delete-btn {
+    background: transparent;
+    color: var(--green);
+}
+
+.news-publish-btn:hover,
+.news-clear-btn:hover,
+.news-delete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px var(--shadow);
+}
+
+.news-delete-btn {
+    margin-top: 15px;
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    font-size: 11px;
+}
+
+.news-empty {
+    grid-column: 1 / -1;
+    padding: 35px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.news-status {
+    min-height: 18px;
+    color: var(--green);
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
 </style>
 
 </head>
@@ -1439,6 +1651,10 @@ body.light .login-field input {
 
             <a href="#achievements">
                 Achievements
+            </a>
+
+            <a href="#news">
+                News
             </a>
 
             <a href="#contact">
@@ -2087,6 +2303,126 @@ body.light .login-field input {
 
 
 <!-- =========================
+     NEWS
+========================= -->
+
+<section
+    id="news"
+    class="reveal news-section"
+>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Latest <span>News</span>
+            </h2>
+
+            <p>
+                // updates, articles & cybersecurity notes
+            </p>
+
+        </div>
+
+
+        <!-- ADMIN NEWS MANAGER -->
+
+        <div class="news-admin-panel" id="newsAdminPanel">
+
+            <div class="news-admin-header">
+
+                <h3>
+                    ADMIN // NEWS MANAGER
+                </h3>
+
+                <button
+                    type="button"
+                    class="news-clear-btn"
+                    onclick="adminLogout()"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+
+            <form
+                class="news-form"
+                id="newsForm"
+                onsubmit="publishNews(event)"
+            >
+
+                <input
+                    type="text"
+                    id="newsTitle"
+                    placeholder="News title"
+                    maxlength="120"
+                    required
+                >
+
+                <textarea
+                    id="newsText"
+                    placeholder="Write your news text..."
+                    maxlength="5000"
+                    required
+                ></textarea>
+
+                <input
+                    type="file"
+                    id="newsImage"
+                    accept="image/png,image/jpeg,image/webp,image/gif"
+                    required
+                >
+
+                <img
+                    id="newsPreview"
+                    class="news-preview"
+                    alt="News image preview"
+                >
+
+                <div class="news-form-actions">
+
+                    <button
+                        type="submit"
+                        class="news-publish-btn"
+                    >
+                        + Publish News
+                    </button>
+
+                    <button
+                        type="button"
+                        class="news-clear-btn"
+                        onclick="clearNewsForm()"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+                <div
+                    class="news-status"
+                    id="newsStatus"
+                ></div>
+
+            </form>
+
+        </div>
+
+
+        <!-- PUBLIC NEWS LIST: GUESTS SEE THIS TOO -->
+
+        <div
+            class="news-grid"
+            id="newsGrid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
      ACHIEVEMENTS
 ========================= -->
 
@@ -2450,6 +2786,286 @@ if (sessionStorage.getItem("adminLoggedIn") === "true") {
         .getElementById("adminBadge")
         .classList.add("visible");
 }
+
+
+
+/* =========================
+   NEWS SYSTEM
+========================= */
+
+const NEWS_STORAGE_KEY = "kaizenNews";
+
+function getNews() {
+    try {
+        return JSON.parse(
+            localStorage.getItem(NEWS_STORAGE_KEY) || "[]"
+        );
+    } catch (error) {
+        return [];
+    }
+}
+
+function saveNews(news) {
+    localStorage.setItem(
+        NEWS_STORAGE_KEY,
+        JSON.stringify(news)
+    );
+}
+
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function renderNews() {
+    const grid = document.getElementById("newsGrid");
+
+    if (!grid) return;
+
+    const news = getNews();
+
+    if (!news.length) {
+        grid.innerHTML = `
+            <div class="news-empty">
+                // No news published yet.
+            </div>
+        `;
+        return;
+    }
+
+    grid.innerHTML = news.map((item) => `
+        <article class="news-card reveal active">
+
+            <div class="news-image-wrap">
+                <img
+                    class="news-image"
+                    src="${item.image}"
+                    alt="${escapeHtml(item.title)}"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="news-content">
+
+                <div class="news-date">
+                    ${escapeHtml(item.date)}
+                </div>
+
+                <h3>
+                    ${escapeHtml(item.title)}
+                </h3>
+
+                <p>
+                    ${escapeHtml(item.text)}
+                </p>
+
+                <button
+                    type="button"
+                    class="news-delete-btn"
+                    data-news-id="${item.id}"
+                    onclick="deleteNews('${item.id}')"
+                    style="display:none"
+                >
+                    Delete
+                </button>
+
+            </div>
+
+        </article>
+    `).join("");
+
+    updateNewsAdminUI();
+}
+
+function updateNewsAdminUI() {
+    const isAdmin =
+        sessionStorage.getItem("adminLoggedIn") === "true";
+
+    const panel = document.getElementById("newsAdminPanel");
+
+    if (panel) {
+        panel.classList.toggle("visible", isAdmin);
+    }
+
+    document.querySelectorAll(".news-delete-btn").forEach((button) => {
+        button.style.display = isAdmin ? "inline-block" : "none";
+    });
+}
+
+function compressNewsImage(file) {
+    return new Promise((resolve, reject) => {
+
+        const reader = new FileReader();
+
+        reader.onload = (event) => {
+
+            const image = new Image();
+
+            image.onload = () => {
+
+                const maxSize = 1400;
+                let width = image.width;
+                let height = image.height;
+
+                if (width > maxSize || height > maxSize) {
+                    const ratio = Math.min(
+                        maxSize / width,
+                        maxSize / height
+                    );
+
+                    width = Math.round(width * ratio);
+                    height = Math.round(height * ratio);
+                }
+
+                const canvas = document.createElement("canvas");
+                canvas.width = width;
+                canvas.height = height;
+
+                const context = canvas.getContext("2d");
+                context.drawImage(image, 0, 0, width, height);
+
+                resolve(
+                    canvas.toDataURL("image/jpeg", 0.82)
+                );
+            };
+
+            image.onerror = () => reject(new Error("Invalid image."));
+            image.src = event.target.result;
+        };
+
+        reader.onerror = () => reject(new Error("Could not read image."));
+        reader.readAsDataURL(file);
+    });
+}
+
+async function publishNews(event) {
+    event.preventDefault();
+
+    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+        return;
+    }
+
+    const title =
+        document.getElementById("newsTitle").value.trim();
+
+    const text =
+        document.getElementById("newsText").value.trim();
+
+    const imageInput =
+        document.getElementById("newsImage");
+
+    const status =
+        document.getElementById("newsStatus");
+
+    if (!title || !text || !imageInput.files.length) {
+        status.textContent = "Please add title, text and an image.";
+        return;
+    }
+
+    status.textContent = "Publishing...";
+
+    try {
+        const image = await compressNewsImage(
+            imageInput.files[0]
+        );
+
+        const news = getNews();
+
+        news.unshift({
+            id: Date.now().toString(),
+            title,
+            text,
+            image,
+            date: new Date().toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            })
+        });
+
+        saveNews(news);
+        renderNews();
+        clearNewsForm();
+
+        status.textContent = "News published successfully.";
+    } catch (error) {
+        status.textContent =
+            "Could not publish this image. Try another image.";
+    }
+}
+
+function clearNewsForm() {
+    const form = document.getElementById("newsForm");
+    const preview = document.getElementById("newsPreview");
+    const status = document.getElementById("newsStatus");
+
+    if (form) form.reset();
+
+    if (preview) {
+        preview.removeAttribute("src");
+        preview.style.display = "none";
+    }
+
+    if (status) status.textContent = "";
+}
+
+function deleteNews(id) {
+    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+        return;
+    }
+
+    if (!confirm("Delete this news post?")) {
+        return;
+    }
+
+    const news = getNews().filter(
+        (item) => item.id !== String(id)
+    );
+
+    saveNews(news);
+    renderNews();
+}
+
+function adminLogout() {
+    sessionStorage.removeItem("adminLoggedIn");
+
+    document
+        .getElementById("adminBadge")
+        ?.classList.remove("visible");
+
+    updateNewsAdminUI();
+
+    window.location.hash = "news";
+}
+
+const newsImageInput = document.getElementById("newsImage");
+
+if (newsImageInput) {
+    newsImageInput.addEventListener("change", () => {
+
+        const file = newsImageInput.files[0];
+        const preview = document.getElementById("newsPreview");
+
+        if (!file || !preview) return;
+
+        const reader = new FileReader();
+
+        reader.onload = (event) => {
+            preview.src = event.target.result;
+            preview.style.display = "block";
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+renderNews();
+updateNewsAdminUI();
+
 
 </script>
 
