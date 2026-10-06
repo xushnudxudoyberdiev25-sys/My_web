@@ -1000,19 +1000,6 @@ footer {
 
 
 /* =========================
-   BLINK
-========================= */
-
-@keyframes blink {
-
-    50% {
-        opacity: 0;
-    }
-
-}
-
-
-/* =========================
    ENTRY / ADMIN ACCESS
 ========================= */
 
@@ -1277,7 +1264,6 @@ body.light .login-field input {
 }
 
 
-
 /* =========================
    NEWS
 ========================= */
@@ -1472,12 +1458,15 @@ body.light .login-field input {
 }
 
 @media (max-width: 900px) {
+
     .news-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
 }
 
 @media (max-width: 600px) {
+
     .news-grid {
         grid-template-columns: 1fr;
     }
@@ -1486,6 +1475,7 @@ body.light .login-field input {
         align-items: flex-start;
         flex-direction: column;
     }
+
 }
 
 </style>
@@ -1504,13 +1494,14 @@ body.light .login-field input {
 
     <div class="entry-box">
 
-        <div class="entry-logo">KAIZEN</div>
+        <div class="entry-logo">
+            KAIZEN
+        </div>
 
         <div class="entry-subtitle">
             cybersecurity portfolio // access portal
         </div>
 
-        <!-- GUEST / ADMIN CHOICE -->
 
         <div id="entryChoicePanel">
 
@@ -1520,29 +1511,56 @@ body.light .login-field input {
 
             <div class="entry-buttons">
 
-                <button class="entry-choice" onclick="enterAsGuest()">
-                    <span class="entry-icon">👤</span>
-                    <span class="entry-label">GUEST</span>
+                <button
+                    class="entry-choice"
+                    onclick="enterAsGuest()"
+                >
+
+                    <span class="entry-icon">
+                        👤
+                    </span>
+
+                    <span class="entry-label">
+                        GUEST
+                    </span>
+
                     <span class="entry-description">
                         Enter the website
                     </span>
+
                 </button>
 
-                <button class="entry-choice" onclick="showAdminLogin()">
-                    <span class="entry-icon">🔐</span>
-                    <span class="entry-label">ADMIN</span>
+
+                <button
+                    class="entry-choice"
+                    onclick="showAdminLogin()"
+                >
+
+                    <span class="entry-icon">
+                        🔐
+                    </span>
+
+                    <span class="entry-label">
+                        ADMIN
+                    </span>
+
                     <span class="entry-description">
                         Restricted access
                     </span>
+
                 </button>
 
             </div>
 
         </div>
 
+
         <!-- ADMIN LOGIN -->
 
-        <div class="admin-login" id="adminLoginPanel">
+        <div
+            class="admin-login"
+            id="adminLoginPanel"
+        >
 
             <div class="login-title">
                 ADMIN ACCESS
@@ -1552,10 +1570,18 @@ body.light .login-field input {
                 Enter your credentials to continue
             </div>
 
-            <form class="login-form" onsubmit="adminLogin(event)">
+
+            <form
+                class="login-form"
+                onsubmit="adminLogin(event)"
+            >
 
                 <div class="login-field">
-                    <label for="adminUsername">Username</label>
+
+                    <label for="adminUsername">
+                        Username
+                    </label>
+
                     <input
                         type="text"
                         id="adminUsername"
@@ -1563,10 +1589,16 @@ body.light .login-field input {
                         placeholder="Enter username"
                         required
                     >
+
                 </div>
 
+
                 <div class="login-field">
-                    <label for="adminPassword">Password</label>
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
                     <input
                         type="password"
                         id="adminPassword"
@@ -1574,7 +1606,9 @@ body.light .login-field input {
                         placeholder="Enter password"
                         required
                     >
+
                 </div>
+
 
                 <div class="login-actions">
 
@@ -1595,7 +1629,11 @@ body.light .login-field input {
 
                 </div>
 
-                <div class="login-error" id="loginError"></div>
+
+                <div
+                    class="login-error"
+                    id="loginError"
+                ></div>
 
             </form>
 
@@ -1605,7 +1643,11 @@ body.light .login-field input {
 
 </div>
 
-<div class="admin-badge" id="adminBadge">
+
+<div
+    class="admin-badge"
+    id="adminBadge"
+>
     ADMIN MODE_
 </div>
 
@@ -1627,9 +1669,13 @@ body.light .login-field input {
 
     <div class="nav-container">
 
-        <a href="#home" class="logo">
+        <a
+            href="#home"
+            class="logo"
+        >
             KAIZEN
         </a>
+
 
         <div class="nav-links">
 
@@ -1679,7 +1725,10 @@ body.light .login-field input {
      HERO
 ========================= -->
 
-<section id="home" class="hero">
+<section
+    id="home"
+    class="hero"
+>
 
     <div class="container">
 
@@ -1691,15 +1740,24 @@ body.light .login-field input {
                     &gt; cybersecurity_mode: ACTIVE_
                 </div>
 
+
                 <h1>
+
                     Hello, I'm
-                    <span>Kaizen</span>
+
+                    <span>
+                        Kaizen
+                    </span>
+
                     (Khushnud)
+
                 </h1>
+
 
                 <h2>
                     Cybersecurity Student & Aspiring Security Specialist
                 </h2>
+
 
                 <p class="hero-description">
 
@@ -1712,6 +1770,7 @@ body.light .login-field input {
                     practical security skills.
 
                 </p>
+
 
                 <div class="buttons">
 
@@ -1740,6 +1799,7 @@ body.light .login-field input {
                     kaizen@cyber: ~
                 </div>
 
+
                 <div class="terminal-body">
 
                     <div class="terminal-line">
@@ -1750,6 +1810,7 @@ body.light .login-field input {
                         Kaizen
                     </div>
 
+
                     <div class="terminal-line">
                         $ role
                     </div>
@@ -1757,6 +1818,7 @@ body.light .login-field input {
                     <div class="terminal-line terminal-muted">
                         Cybersecurity Student
                     </div>
+
 
                     <div class="terminal-line">
                         $ interests
@@ -1766,6 +1828,7 @@ body.light .login-field input {
                         Linux · Networking · Security · Programming
                     </div>
 
+
                     <div class="terminal-line">
                         $ status
                     </div>
@@ -1773,6 +1836,7 @@ body.light .login-field input {
                     <div class="terminal-line terminal-muted">
                         Learning & Building...
                     </div>
+
 
                     <span class="cursor"></span>
 
@@ -2097,8 +2161,6 @@ body.light .login-field input {
         <div class="timeline">
 
 
-            <!-- 2024 — 2025 -->
-
             <div class="timeline-item">
 
                 <div class="date">
@@ -2120,8 +2182,6 @@ body.light .login-field input {
 
             </div>
 
-
-            <!-- 2026 -->
 
             <div class="timeline-item">
 
@@ -2146,8 +2206,6 @@ body.light .login-field input {
             </div>
 
 
-            <!-- 2026 — PRESENT -->
-
             <div class="timeline-item">
 
                 <div class="date">
@@ -2170,8 +2228,6 @@ body.light .login-field input {
 
             </div>
 
-
-            <!-- PRESENT — FUTURE -->
 
             <div class="timeline-item">
 
@@ -2326,9 +2382,10 @@ body.light .login-field input {
         </div>
 
 
-        <!-- ADMIN NEWS MANAGER -->
-
-        <div class="news-admin-panel" id="newsAdminPanel">
+        <div
+            class="news-admin-panel"
+            id="newsAdminPanel"
+        >
 
             <div class="news-admin-header">
 
@@ -2361,12 +2418,14 @@ body.light .login-field input {
                     required
                 >
 
+
                 <textarea
                     id="newsText"
                     placeholder="Write your news text..."
                     maxlength="5000"
                     required
                 ></textarea>
+
 
                 <input
                     type="file"
@@ -2375,11 +2434,13 @@ body.light .login-field input {
                     required
                 >
 
+
                 <img
                     id="newsPreview"
                     class="news-preview"
                     alt="News image preview"
                 >
+
 
                 <div class="news-form-actions">
 
@@ -2389,6 +2450,7 @@ body.light .login-field input {
                     >
                         + Publish News
                     </button>
+
 
                     <button
                         type="button"
@@ -2400,6 +2462,7 @@ body.light .login-field input {
 
                 </div>
 
+
                 <div
                     class="news-status"
                     id="newsStatus"
@@ -2409,8 +2472,6 @@ body.light .login-field input {
 
         </div>
 
-
-        <!-- PUBLIC NEWS LIST: GUESTS SEE THIS TOO -->
 
         <div
             class="news-grid"
@@ -2525,6 +2586,7 @@ body.light .login-field input {
                 Let's <span>Connect</span>
             </h2>
 
+
             <p>
 
                 Interested in technology, cybersecurity
@@ -2590,11 +2652,18 @@ body.light .login-field input {
 </footer>
 
 
-<!-- Firebase SDK for online News -->
+<!-- =========================
+     FIREBASE SDK
+========================= -->
+
 <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-app-compat.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-auth-compat.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore-compat.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-storage-compat.js"></script>
+
 
 <script>
 
@@ -2704,485 +2773,1531 @@ console.log(
 
 
 /* =========================
-   ENTRY / ADMIN ACCESS
+   ADMIN CONFIG
 ========================= */
 
 const ADMIN_USERNAME = "Xushnud_";
 
+
 /* =========================
-   FIREBASE ONLINE NEWS SETUP
+   FIREBASE CONFIG
 ========================= */
 
-const FIREBASE_ADMIN_EMAIL = "YOUR_ADMIN_EMAIL@example.com";
+const FIREBASE_ADMIN_EMAIL =
+    "xushnudxudoyberdiev25@gmail.com";
+
 
 const FIREBASE_CONFIG = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.firebasestorage.app",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+
+    apiKey:
+        "AIzaSyA73g_JW-XUvNwIwq4Yuktexq09Gslh4-M",
+
+    authDomain:
+        "kaizen-news-2b90e.firebaseapp.com",
+
+    projectId:
+        "kaizen-news-2b90e",
+
+    storageBucket:
+        "kaizen-news-2b90e.firebasestorage.app",
+
+    messagingSenderId:
+        "321900965063",
+
+    appId:
+        "1:321900965063:web:31115e20230876e38422e2",
+
+    measurementId:
+        "G-1NRJF859VN"
+
 };
 
+
+/* =========================
+   FIREBASE STATE
+========================= */
+
 const FIREBASE_CONFIG_READY =
-    !Object.values(FIREBASE_CONFIG).some(value =>
-        String(value).includes("YOUR_")
-    ) &&
-    !FIREBASE_ADMIN_EMAIL.includes("YOUR_");
+    Boolean(
+        FIREBASE_CONFIG.apiKey &&
+        FIREBASE_CONFIG.authDomain &&
+        FIREBASE_CONFIG.projectId &&
+        FIREBASE_CONFIG.storageBucket &&
+        FIREBASE_CONFIG.messagingSenderId &&
+        FIREBASE_CONFIG.appId &&
+        FIREBASE_ADMIN_EMAIL
+    );
+
 
 let firebaseReady = false;
+
 let db = null;
+
 let storage = null;
 
-if (typeof firebase !== "undefined" && FIREBASE_CONFIG_READY) {
+let firebaseAuth = null;
+
+
+/* =========================
+   FIREBASE INITIALIZATION
+========================= */
+
+if (
+    typeof firebase !== "undefined" &&
+    FIREBASE_CONFIG_READY
+) {
+
     try {
+
         if (!firebase.apps.length) {
-            firebase.initializeApp(FIREBASE_CONFIG);
+
+            firebase.initializeApp(
+                FIREBASE_CONFIG
+            );
+
         }
 
-        db = firebase.firestore();
-        storage = firebase.storage();
+        firebaseAuth =
+            firebase.auth();
+
+        db =
+            firebase.firestore();
+
+        storage =
+            firebase.storage();
+
         firebaseReady = true;
-    } catch (error) {
-        console.error("Firebase initialization failed:", error);
-    }
-}
 
-function enterAsGuest() {
-    const entryScreen = document.getElementById("entryScreen");
-
-    document.body.classList.remove("entry-locked");
-    entryScreen.classList.add("hidden");
-}
-
-function showAdminLogin() {
-    document.getElementById("entryChoicePanel").classList.add("hidden");
-    document.getElementById("adminLoginPanel").classList.add("active");
-
-    document.getElementById("loginError").textContent = "";
-
-    setTimeout(() => {
-        document.getElementById("adminUsername").focus();
-    }, 100);
-}
-
-function backToEntryChoices() {
-    document.getElementById("adminLoginPanel").classList.remove("active");
-    document.getElementById("entryChoicePanel").classList.remove("hidden");
-
-    document.getElementById("adminUsername").value = "";
-    document.getElementById("adminPassword").value = "";
-    document.getElementById("loginError").textContent = "";
-}
-
-async function adminLogin(event) {
-    event.preventDefault();
-
-    const username =
-        document.getElementById("adminUsername").value.trim();
-
-    const password =
-        document.getElementById("adminPassword").value;
-
-    const error =
-        document.getElementById("loginError");
-
-    if (username !== ADMIN_USERNAME) {
-        error.textContent =
-            "Access denied. Incorrect username or password.";
-        document.getElementById("adminPassword").value = "";
-        return;
-    }
-
-    if (!firebaseReady) {
-        error.textContent =
-            "Online News is not configured yet. Add Firebase config first.";
-        return;
-    }
-
-    try {
-        await firebase.auth().signInWithEmailAndPassword(
-            FIREBASE_ADMIN_EMAIL,
-            password
+        console.log(
+            "%cFIREBASE READY_",
+            "color:#00ff88;font-size:16px;font-weight:bold;"
         );
 
+    } catch (error) {
+
+        console.error(
+            "Firebase initialization failed:",
+            error
+        );
+
+        firebaseReady = false;
+
+    }
+
+} else {
+
+    console.error(
+        "Firebase configuration is incomplete."
+    );
+
+}
+
+
+/* =========================
+   ENTRY
+========================= */
+
+function enterAsGuest() {
+
+    const entryScreen =
+        document.getElementById(
+            "entryScreen"
+        );
+
+    document.body.classList.remove(
+        "entry-locked"
+    );
+
+    entryScreen.classList.add(
+        "hidden"
+    );
+
+}
+
+
+/* =========================
+   SHOW ADMIN LOGIN
+========================= */
+
+function showAdminLogin() {
+
+    document
+        .getElementById("entryChoicePanel")
+        .classList.add("hidden");
+
+    document
+        .getElementById("adminLoginPanel")
+        .classList.add("active");
+
+    document
+        .getElementById("loginError")
+        .textContent = "";
+
+    setTimeout(
+        () => {
+
+            document
+                .getElementById("adminUsername")
+                .focus();
+
+        },
+        100
+    );
+
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+function backToEntryChoices() {
+
+    document
+        .getElementById("adminLoginPanel")
+        .classList.remove("active");
+
+    document
+        .getElementById("entryChoicePanel")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("adminUsername")
+        .value = "";
+
+    document
+        .getElementById("adminPassword")
+        .value = "";
+
+    document
+        .getElementById("loginError")
+        .textContent = "";
+
+}
+
+
+/* =========================
+   ADMIN LOGIN
+========================= */
+
+async function adminLogin(event) {
+
+    event.preventDefault();
+
+
+    const username =
+        document
+            .getElementById("adminUsername")
+            .value
+            .trim();
+
+
+    const password =
+        document
+            .getElementById("adminPassword")
+            .value;
+
+
+    const error =
+        document
+            .getElementById("loginError");
+
+
+    error.textContent = "";
+
+
+    if (
+        username !== ADMIN_USERNAME
+    ) {
+
+        error.textContent =
+            "Access denied. Incorrect username or password.";
+
+        document
+            .getElementById("adminPassword")
+            .value = "";
+
+        return;
+
+    }
+
+
+    if (
+        !firebaseReady ||
+        !firebaseAuth
+    ) {
+
+        error.textContent =
+            "Firebase is not configured correctly.";
+
+        return;
+
+    }
+
+
+    if (!password) {
+
+        error.textContent =
+            "Please enter your password.";
+
+        return;
+
+    }
+
+
+    try {
+
+        await firebaseAuth
+            .signInWithEmailAndPassword(
+                FIREBASE_ADMIN_EMAIL,
+                password
+            );
+
+
         error.textContent = "";
-        sessionStorage.setItem("adminLoggedIn", "true");
-        document.body.classList.remove("entry-locked");
-        document.getElementById("entryScreen").classList.add("hidden");
-        document.getElementById("adminBadge").classList.add("visible");
+
+
+        sessionStorage.setItem(
+            "adminLoggedIn",
+            "true"
+        );
+
+
+        document.body.classList.remove(
+            "entry-locked"
+        );
+
+
+        document
+            .getElementById("entryScreen")
+            .classList.add("hidden");
+
+
+        document
+            .getElementById("adminBadge")
+            .classList.add("visible");
+
+
         updateNewsAdminUI();
+
         await renderNews();
+
 
         console.log(
             "%cADMIN ACCESS GRANTED_",
             "color:#00ff88;font-size:18px;font-weight:bold;"
         );
+
+
     } catch (authError) {
-        console.error(authError);
-        error.textContent =
+
+        console.error(
+            "Firebase login error:",
+            authError
+        );
+
+
+        let message =
             "Access denied. Incorrect username or password.";
-        document.getElementById("adminPassword").value = "";
+
+
+        if (
+            authError &&
+            authError.code ===
+            "auth/user-not-found"
+        ) {
+
+            message =
+                "Admin Firebase account was not found.";
+
+        }
+
+
+        if (
+            authError &&
+            authError.code ===
+            "auth/invalid-credential"
+        ) {
+
+            message =
+                "Incorrect username or password.";
+
+        }
+
+
+        if (
+            authError &&
+            authError.code ===
+            "auth/invalid-login-credentials"
+        ) {
+
+            message =
+                "Incorrect username or password.";
+
+        }
+
+
+        if (
+            authError &&
+            authError.code ===
+            "auth/too-many-requests"
+        ) {
+
+            message =
+                "Too many login attempts. Try again later.";
+
+        }
+
+
+        error.textContent = message;
+
+
+        document
+            .getElementById("adminPassword")
+            .value = "";
+
     }
+
 }
 
-/* Keep admin session during the current browser tab session */
-if (sessionStorage.getItem("adminLoggedIn") === "true") {
-    document.body.classList.remove("entry-locked");
 
-    document
-        .getElementById("entryScreen")
-        .classList.add("hidden");
+/* =========================
+   FIREBASE AUTH STATE
+========================= */
 
-    document
-        .getElementById("adminBadge")
-        .classList.add("visible");
+if (
+    firebaseReady &&
+    firebaseAuth
+) {
+
+    firebaseAuth.onAuthStateChanged(
+        async (user) => {
+
+            if (
+                user &&
+                user.email &&
+                user.email.toLowerCase() ===
+                FIREBASE_ADMIN_EMAIL.toLowerCase()
+            ) {
+
+                sessionStorage.setItem(
+                    "adminLoggedIn",
+                    "true"
+                );
+
+                document.body.classList.remove(
+                    "entry-locked"
+                );
+
+                document
+                    .getElementById("entryScreen")
+                    .classList.add("hidden");
+
+                document
+                    .getElementById("adminBadge")
+                    .classList.add("visible");
+
+                updateNewsAdminUI();
+
+            } else {
+
+                sessionStorage.removeItem(
+                    "adminLoggedIn"
+                );
+
+                document
+                    .getElementById("adminBadge")
+                    .classList.remove("visible");
+
+                updateNewsAdminUI();
+
+            }
+
+            await renderNews();
+
+        }
+    );
+
 }
-
 
 
 /* =========================
    NEWS SYSTEM
 ========================= */
 
-const NEWS_COLLECTION = "news";
+const NEWS_COLLECTION =
+    "news";
+
+
+/* =========================
+   LOCAL FALLBACK
+========================= */
 
 function getLocalNewsFallback() {
+
     try {
-        return JSON.parse(localStorage.getItem("kaizenNews") || "[]");
+
+        return JSON.parse(
+            localStorage.getItem(
+                "kaizenNews"
+            ) || "[]"
+        );
+
     } catch (error) {
+
         return [];
+
     }
+
 }
+
+
+/* =========================
+   ESCAPE HTML
+========================= */
 
 function escapeHtml(value) {
+
     return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
 }
 
-function formatNewsDate(timestamp, fallback) {
+
+/* =========================
+   FORMAT DATE
+========================= */
+
+function formatNewsDate(
+    timestamp,
+    fallback
+) {
+
     try {
-        if (timestamp && typeof timestamp.toDate === "function") {
-            return timestamp.toDate().toLocaleDateString("en-GB", {
-                day: "2-digit",
-                month: "short",
-                year: "numeric"
-            });
+
+        if (
+            timestamp &&
+            typeof timestamp.toDate ===
+            "function"
+        ) {
+
+            return timestamp
+                .toDate()
+                .toLocaleDateString(
+                    "en-GB",
+                    {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric"
+                    }
+                );
+
         }
-    } catch (error) {}
+
+    } catch (error) {
+
+        console.warn(
+            "Date formatting failed:",
+            error
+        );
+
+    }
 
     return fallback || "";
+
 }
+
+
+/* =========================
+   GET NEWS
+========================= */
 
 async function getNews() {
-    if (!firebaseReady || !db) {
+
+    if (
+        !firebaseReady ||
+        !db
+    ) {
+
         return getLocalNewsFallback();
+
     }
+
 
     try {
-        const snapshot = await db
-            .collection(NEWS_COLLECTION)
-            .orderBy("createdAt", "desc")
-            .get();
 
-        return snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-        }));
+        const snapshot =
+            await db
+                .collection(
+                    NEWS_COLLECTION
+                )
+                .orderBy(
+                    "createdAt",
+                    "desc"
+                )
+                .get();
+
+
+        return snapshot.docs.map(
+            (doc) => ({
+
+                id: doc.id,
+
+                ...doc.data()
+
+            })
+        );
+
+
     } catch (error) {
-        console.error("Could not load online news:", error);
+
+        console.error(
+            "Could not load online news:",
+            error
+        );
+
         return [];
+
     }
+
 }
 
+
+/* =========================
+   RENDER NEWS
+========================= */
+
 async function renderNews() {
-    const grid = document.getElementById("newsGrid");
+
+    const grid =
+        document.getElementById(
+            "newsGrid"
+        );
+
+
     if (!grid) return;
 
-    if (!firebaseReady) {
+
+    if (
+        !firebaseReady ||
+        !db
+    ) {
+
         grid.innerHTML = `
+
             <div class="news-empty">
+
                 // Online News is not configured yet.
+
             </div>
+
         `;
+
         updateNewsAdminUI();
+
         return;
+
     }
+
 
     grid.innerHTML = `
+
         <div class="news-empty">
+
             // Loading news...
+
         </div>
+
     `;
 
-    const news = await getNews();
+
+    const news =
+        await getNews();
+
 
     if (!news.length) {
+
         grid.innerHTML = `
+
             <div class="news-empty">
+
                 // No news published yet.
+
             </div>
+
         `;
+
         updateNewsAdminUI();
+
         return;
+
     }
 
-    const isAdmin =
-        sessionStorage.getItem("adminLoggedIn") === "true";
 
-    grid.innerHTML = news.map((item) => `
-        <article class="news-card reveal active">
+    const isAdmin =
+        sessionStorage.getItem(
+            "adminLoggedIn"
+        ) === "true";
+
+
+    grid.innerHTML = news.map(
+        (item) => `
+
+        <article
+            class="news-card reveal active"
+        >
+
             <div class="news-image-wrap">
+
                 <img
                     class="news-image"
-                    src="${escapeHtml(item.imageUrl || "")}"
-                    alt="${escapeHtml(item.title || "News")}"
+                    src="${escapeHtml(
+                        item.imageUrl || ""
+                    )}"
+                    alt="${escapeHtml(
+                        item.title || "News"
+                    )}"
                     loading="lazy"
                 >
+
             </div>
 
+
             <div class="news-content">
+
                 <div class="news-date">
-                    ${escapeHtml(formatNewsDate(item.createdAt, item.date))}
+
+                    ${escapeHtml(
+                        formatNewsDate(
+                            item.createdAt,
+                            item.date
+                        )
+                    )}
+
                 </div>
 
-                <h3>${escapeHtml(item.title || "")}</h3>
 
-                <p>${escapeHtml(item.text || "")}</p>
+                <h3>
 
-                ${isAdmin ? `
+                    ${escapeHtml(
+                        item.title || ""
+                    )}
+
+                </h3>
+
+
+                <p>
+
+                    ${escapeHtml(
+                        item.text || ""
+                    )}
+
+                </p>
+
+
+                ${
+                    isAdmin
+                        ? `
+
                     <button
                         type="button"
                         class="news-delete-btn"
-                        onclick="deleteNews('${escapeHtml(item.id)}')"
+                        onclick="deleteNews('${String(
+                            item.id
+                        )}')"
                     >
                         Delete
                     </button>
-                ` : ""}
-            </div>
-        </article>
-    `).join("");
 
-    updateNewsAdminUI();
-}
-
-function updateNewsAdminUI() {
-    const isAdmin =
-        sessionStorage.getItem("adminLoggedIn") === "true";
-
-    const panel = document.getElementById("newsAdminPanel");
-
-    if (panel) {
-        panel.classList.toggle("visible", isAdmin);
-    }
-}
-
-function compressNewsImage(file) {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-
-        reader.onload = (event) => {
-            const image = new Image();
-
-            image.onload = () => {
-                const maxSize = 1600;
-                let width = image.width;
-                let height = image.height;
-
-                if (width > maxSize || height > maxSize) {
-                    const ratio = Math.min(
-                        maxSize / width,
-                        maxSize / height
-                    );
-                    width = Math.round(width * ratio);
-                    height = Math.round(height * ratio);
+                    `
+                        : ""
                 }
 
-                const canvas = document.createElement("canvas");
-                canvas.width = width;
-                canvas.height = height;
+            </div>
 
-                const context = canvas.getContext("2d");
-                context.drawImage(image, 0, 0, width, height);
+        </article>
 
-                canvas.toBlob(
-                    (blob) => {
-                        if (blob) resolve(blob);
-                        else reject(new Error("Could not compress image."));
-                    },
-                    "image/jpeg",
-                    0.84
-                );
-            };
+    `
+    ).join("");
 
-            image.onerror = () => reject(new Error("Invalid image."));
-            image.src = event.target.result;
-        };
 
-        reader.onerror = () => reject(new Error("Could not read image."));
-        reader.readAsDataURL(file);
-    });
+    updateNewsAdminUI();
+
 }
+
+
+/* =========================
+   UPDATE ADMIN UI
+========================= */
+
+function updateNewsAdminUI() {
+
+    const isAdmin =
+        sessionStorage.getItem(
+            "adminLoggedIn"
+        ) === "true";
+
+
+    const panel =
+        document.getElementById(
+            "newsAdminPanel"
+        );
+
+
+    if (panel) {
+
+        panel.classList.toggle(
+            "visible",
+            isAdmin
+        );
+
+    }
+
+}
+
+
+/* =========================
+   IMAGE COMPRESSION
+========================= */
+
+function compressNewsImage(file) {
+
+    return new Promise(
+        (resolve, reject) => {
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                (event) => {
+
+                    const image =
+                        new Image();
+
+
+                    image.onload =
+                        () => {
+
+                            const maxSize =
+                                1600;
+
+
+                            let width =
+                                image.width;
+
+
+                            let height =
+                                image.height;
+
+
+                            if (
+                                width > maxSize ||
+                                height > maxSize
+                            ) {
+
+                                const ratio =
+                                    Math.min(
+                                        maxSize / width,
+                                        maxSize / height
+                                    );
+
+
+                                width =
+                                    Math.round(
+                                        width * ratio
+                                    );
+
+
+                                height =
+                                    Math.round(
+                                        height * ratio
+                                    );
+
+                            }
+
+
+                            const canvas =
+                                document.createElement(
+                                    "canvas"
+                                );
+
+
+                            canvas.width =
+                                width;
+
+
+                            canvas.height =
+                                height;
+
+
+                            const context =
+                                canvas.getContext(
+                                    "2d"
+                                );
+
+
+                            context.drawImage(
+                                image,
+                                0,
+                                0,
+                                width,
+                                height
+                            );
+
+
+                            canvas.toBlob(
+                                (blob) => {
+
+                                    if (blob) {
+
+                                        resolve(blob);
+
+                                    } else {
+
+                                        reject(
+                                            new Error(
+                                                "Could not compress image."
+                                            )
+                                        );
+
+                                    }
+
+                                },
+                                "image/jpeg",
+                                0.84
+                            );
+
+                        };
+
+
+                    image.onerror =
+                        () => {
+
+                            reject(
+                                new Error(
+                                    "Invalid image."
+                                )
+                            );
+
+                        };
+
+
+                    image.src =
+                        event.target.result;
+
+                };
+
+
+            reader.onerror =
+                () => {
+
+                    reject(
+                        new Error(
+                            "Could not read image."
+                        )
+                    );
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+}
+
+
+/* =========================
+   PUBLISH NEWS
+========================= */
 
 async function publishNews(event) {
+
     event.preventDefault();
 
-    const status = document.getElementById("newsStatus");
 
-    if (!firebaseReady || !db || !storage) {
+    const status =
+        document.getElementById(
+            "newsStatus"
+        );
+
+
+    if (
+        !firebaseReady ||
+        !db ||
+        !storage ||
+        !firebaseAuth
+    ) {
+
         status.textContent =
-            "Online News is not configured yet. Add Firebase first.";
+            "Firebase is not configured correctly.";
+
         return;
+
     }
 
-    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
-        status.textContent = "Admin access required.";
+
+    if (
+        sessionStorage.getItem(
+            "adminLoggedIn"
+        ) !== "true"
+    ) {
+
+        status.textContent =
+            "Admin access required.";
+
         return;
+
     }
 
-    const currentUser = firebase.auth().currentUser;
 
-    if (!currentUser ||
-        currentUser.email.toLowerCase() !== FIREBASE_ADMIN_EMAIL.toLowerCase()) {
-        status.textContent = "Firebase admin authentication required.";
+    const currentUser =
+        firebaseAuth.currentUser;
+
+
+    if (
+        !currentUser ||
+        !currentUser.email ||
+        currentUser.email.toLowerCase() !==
+        FIREBASE_ADMIN_EMAIL.toLowerCase()
+    ) {
+
+        status.textContent =
+            "Firebase admin authentication required.";
+
         return;
+
     }
 
-    const title = document.getElementById("newsTitle").value.trim();
-    const text = document.getElementById("newsText").value.trim();
-    const imageInput = document.getElementById("newsImage");
 
-    if (!title || !text || !imageInput.files.length) {
-        status.textContent = "Please add title, text and an image.";
+    const title =
+        document
+            .getElementById("newsTitle")
+            .value
+            .trim();
+
+
+    const text =
+        document
+            .getElementById("newsText")
+            .value
+            .trim();
+
+
+    const imageInput =
+        document.getElementById(
+            "newsImage"
+        );
+
+
+    if (
+        !title ||
+        !text ||
+        !imageInput.files.length
+    ) {
+
+        status.textContent =
+            "Please add title, text and an image.";
+
         return;
+
     }
 
-    status.textContent = "Uploading image and publishing...";
+
+    const selectedFile =
+        imageInput.files[0];
+
+
+    const allowedTypes = [
+        "image/png",
+        "image/jpeg",
+        "image/webp",
+        "image/gif"
+    ];
+
+
+    if (
+        !allowedTypes.includes(
+            selectedFile.type
+        )
+    ) {
+
+        status.textContent =
+            "Please select a PNG, JPG, WEBP or GIF image.";
+
+        return;
+
+    }
+
+
+    status.textContent =
+        "Uploading image and publishing...";
+
 
     try {
-        const blob = await compressNewsImage(imageInput.files[0]);
-        const fileId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}.jpg`;
-        const storagePath = `news/${fileId}`;
-        const storageRef = storage.ref(storagePath);
 
-        await storageRef.put(blob, {
-            contentType: "image/jpeg",
-            cacheControl: "public,max-age=31536000"
-        });
+        const blob =
+            await compressNewsImage(
+                selectedFile
+            );
 
-        const imageUrl = await storageRef.getDownloadURL();
 
-        await db.collection(NEWS_COLLECTION).add({
-            title,
-            text,
-            imageUrl,
-            storagePath,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        });
+        const fileId =
+            `${Date.now()}-${Math.random()
+                .toString(36)
+                .slice(2, 9)}.jpg`;
+
+
+        const storagePath =
+            `news/${fileId}`;
+
+
+        const storageRef =
+            storage.ref(
+                storagePath
+            );
+
+
+        await storageRef.put(
+            blob,
+            {
+                contentType:
+                    "image/jpeg",
+
+                cacheControl:
+                    "public,max-age=31536000"
+            }
+        );
+
+
+        const imageUrl =
+            await storageRef.getDownloadURL();
+
+
+        await db
+            .collection(
+                NEWS_COLLECTION
+            )
+            .add({
+
+                title: title,
+
+                text: text,
+
+                imageUrl: imageUrl,
+
+                storagePath: storagePath,
+
+                createdAt:
+                    firebase.firestore
+                        .FieldValue
+                        .serverTimestamp()
+
+            });
+
 
         clearNewsForm();
-        status.textContent = "News published successfully online.";
-        await renderNews();
-    } catch (error) {
-        console.error("Publish failed:", error);
+
+
         status.textContent =
-            "Publish failed. Check Firebase setup and security rules.";
+            "News published successfully online.";
+
+
+        await renderNews();
+
+
+    } catch (error) {
+
+        console.error(
+            "Publish failed:",
+            error
+        );
+
+
+        if (
+            error &&
+            error.code ===
+            "storage/unauthorized"
+        ) {
+
+            status.textContent =
+                "Storage permission denied. Check Firebase Storage Rules.";
+
+        } else if (
+            error &&
+            error.code ===
+            "permission-denied"
+        ) {
+
+            status.textContent =
+                "Firestore permission denied. Check Firestore Rules.";
+
+        } else {
+
+            status.textContent =
+                "Publish failed. Check Firebase setup and security rules.";
+
+        }
+
     }
+
 }
+
+
+/* =========================
+   CLEAR FORM
+========================= */
 
 function clearNewsForm() {
-    const form = document.getElementById("newsForm");
-    const preview = document.getElementById("newsPreview");
-    const status = document.getElementById("newsStatus");
 
-    if (form) form.reset();
+    const form =
+        document.getElementById(
+            "newsForm"
+        );
+
+
+    const preview =
+        document.getElementById(
+            "newsPreview"
+        );
+
+
+    const status =
+        document.getElementById(
+            "newsStatus"
+        );
+
+
+    if (form) {
+
+        form.reset();
+
+    }
+
 
     if (preview) {
-        preview.removeAttribute("src");
-        preview.style.display = "none";
+
+        preview.removeAttribute(
+            "src"
+        );
+
+        preview.style.display =
+            "none";
+
     }
 
-    if (status) status.textContent = "";
+
+    if (status) {
+
+        status.textContent =
+            "";
+
+    }
+
 }
+
+
+/* =========================
+   DELETE NEWS
+========================= */
 
 async function deleteNews(id) {
-    if (!firebaseReady || !db) return;
-    if (sessionStorage.getItem("adminLoggedIn") !== "true") return;
-    if (!confirm("Delete this news post?")) return;
+
+    if (
+        !firebaseReady ||
+        !db ||
+        !firebaseAuth
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        sessionStorage.getItem(
+            "adminLoggedIn"
+        ) !== "true"
+    ) {
+
+        return;
+
+    }
+
+
+    const currentUser =
+        firebaseAuth.currentUser;
+
+
+    if (
+        !currentUser ||
+        !currentUser.email ||
+        currentUser.email.toLowerCase() !==
+        FIREBASE_ADMIN_EMAIL.toLowerCase()
+    ) {
+
+        alert(
+            "Firebase admin authentication required."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        !confirm(
+            "Delete this news post?"
+        )
+    ) {
+
+        return;
+
+    }
+
 
     try {
-        const docRef = db.collection(NEWS_COLLECTION).doc(String(id));
-        const snapshot = await docRef.get();
 
-        if (!snapshot.exists) return;
+        const docRef =
+            db
+                .collection(
+                    NEWS_COLLECTION
+                )
+                .doc(
+                    String(id)
+                );
 
-        const item = snapshot.data();
+
+        const snapshot =
+            await docRef.get();
+
+
+        if (
+            !snapshot.exists
+        ) {
+
+            return;
+
+        }
+
+
+        const item =
+            snapshot.data();
+
+
         await docRef.delete();
 
-        if (storage && item.storagePath) {
+
+        if (
+            storage &&
+            item.storagePath
+        ) {
+
             try {
-                await storage.ref(item.storagePath).delete();
-            } catch (storageError) {
-                console.warn("Image deletion failed:", storageError);
+
+                await storage
+                    .ref(
+                        item.storagePath
+                    )
+                    .delete();
+
+            } catch (
+                storageError
+            ) {
+
+                console.warn(
+                    "Image deletion failed:",
+                    storageError
+                );
+
             }
+
         }
+
 
         await renderNews();
+
+
     } catch (error) {
-        console.error("Delete failed:", error);
-        alert("Could not delete this news item.");
+
+        console.error(
+            "Delete failed:",
+            error
+        );
+
+
+        alert(
+            "Could not delete this news item."
+        );
+
     }
+
 }
+
+
+/* =========================
+   ADMIN LOGOUT
+========================= */
 
 async function adminLogout() {
+
     try {
-        if (firebaseReady && firebase.auth().currentUser) {
-            await firebase.auth().signOut();
+
+        if (
+            firebaseReady &&
+            firebaseAuth &&
+            firebaseAuth.currentUser
+        ) {
+
+            await firebaseAuth.signOut();
+
         }
+
     } catch (error) {
-        console.error("Logout failed:", error);
+
+        console.error(
+            "Logout failed:",
+            error
+        );
+
     }
 
-    sessionStorage.removeItem("adminLoggedIn");
-    document.getElementById("adminBadge")?.classList.remove("visible");
+
+    sessionStorage.removeItem(
+        "adminLoggedIn"
+    );
+
+
+    document
+        .getElementById("adminBadge")
+        ?.classList.remove(
+            "visible"
+        );
+
+
     updateNewsAdminUI();
-    window.location.hash = "news";
+
+
+    document.body.classList.add(
+        "entry-locked"
+    );
+
+
+    document
+        .getElementById("entryScreen")
+        .classList.remove(
+            "hidden"
+        );
+
+
+    backToEntryChoices();
+
+
+    window.location.hash =
+        "news";
+
+
+    await renderNews();
+
 }
 
-const newsImageInput = document.getElementById("newsImage");
+
+/* =========================
+   NEWS IMAGE PREVIEW
+========================= */
+
+const newsImageInput =
+    document.getElementById(
+        "newsImage"
+    );
+
 
 if (newsImageInput) {
-    newsImageInput.addEventListener("change", () => {
-        const file = newsImageInput.files[0];
-        const preview = document.getElementById("newsPreview");
 
-        if (!file || !preview) return;
+    newsImageInput.addEventListener(
+        "change",
+        () => {
 
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            preview.src = event.target.result;
-            preview.style.display = "block";
-        };
-        reader.readAsDataURL(file);
-    });
+            const file =
+                newsImageInput.files[0];
+
+
+            const preview =
+                document.getElementById(
+                    "newsPreview"
+                );
+
+
+            if (
+                !file ||
+                !preview
+            ) {
+
+                return;
+
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                (event) => {
+
+                    preview.src =
+                        event.target.result;
+
+                    preview.style.display =
+                        "block";
+
+                };
+
+
+            reader.readAsDataURL(
+                file
+            );
+
+        }
+    );
+
 }
 
+
+/* =========================
+   INITIAL NEWS LOAD
+========================= */
+
 renderNews();
+
 updateNewsAdminUI();
 
-const firebaseConfig = {
-  apiKey: "AIzaSyA73g_JW-XUvNwIwq4Yuktexq09Gslh4-M",
-  authDomain: "kaizen-news-2b90e.firebaseapp.com",
-  projectId: "kaizen-news-2b90e",
-  storageBucket: "kaizen-news-2b90e.firebasestorage.app",
-  messagingSenderId: "321900965063",
-  appId: "1:321900965063:web:31115e20230876e38422e2",
-  measurementId: "G-1NRJF859VN"
-};
 
 </script>
 
