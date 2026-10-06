@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 
 <meta name="google-site-verification"
-content="rBYQC7pr4zazi7U1fvbDwqtxw7pmCh9gHIZ78V4NahA">
+      content="rBYQC7pr4zazi7U1fvbDwqtxw7pmCh9gHIZ78V4NahA">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="Kaizen (Khushnud) — Cybersecurity student and aspiring security specialist. Explore my journey in cybersecurity, Linux, networking, programming and technology.">
+      content="Kaizen (Khushnud) — Cybersecurity student and aspiring security specialist. Explore my journey in cybersecurity, Linux, networking, programming and technology.">
 
 <meta name="keywords"
-content="Kaizen, Khushnud, Cybersecurity, Cybersecurity Student, Linux, Networking, Programming, Uzbekistan, Cyber University">
+      content="Kaizen, Khushnud, Cybersecurity, Cybersecurity Student, Linux, Networking, Programming, Uzbekistan, Cyber University">
 
 <meta name="author" content="Kaizen (Khushnud)">
 
-<meta property="og:title" content="Kaizen — Cybersecurity Portfolio">
+<meta property="og:title"
+      content="Kaizen — Cybersecurity Portfolio">
 
 <meta property="og:description"
-content="Cybersecurity student exploring Linux, networking, programming and information security.">
+      content="Cybersecurity student exploring Linux, networking, programming and information security.">
 
 <meta property="og:type" content="website">
 
 <title>Kaizen — Cybersecurity Portfolio</title>
 
-
 <style>
-
-/* =========================
-   GLOBAL
-========================= */
 
 * {
     margin: 0;
@@ -56,7 +51,6 @@ content="Cybersecurity student exploring Linux, networking, programming and info
 }
 
 body.light {
-
     --bg: #f4fff9;
     --bg-secondary: #e9fff2;
     --card: rgba(255, 255, 255, 0.8);
@@ -72,54 +66,48 @@ body.light {
 }
 
 body {
-
     font-family: "Courier New", monospace;
-
     background: var(--bg);
-
     color: var(--text);
-
     line-height: 1.7;
-
     overflow-x: hidden;
-
     transition: 0.3s ease;
 }
 
+body.entry-locked {
+    overflow: hidden;
+}
+
 a {
-
     color: inherit;
-
     text-decoration: none;
 }
 
-::selection {
-
-    background: var(--green);
-
-    color: #001b0e;
+button,
+input,
+textarea {
+    font-family: inherit;
 }
 
+::selection {
+    background: var(--green);
+    color: #001b0e;
+}
 
 /* =========================
    BACKGROUND
 ========================= */
 
 .network {
-
     position: fixed;
-
     inset: 0;
-
     z-index: -3;
 
     background-image:
-
         linear-gradient(
             rgba(0,255,136,0.035) 1px,
             transparent 1px
         ),
-
         linear-gradient(
             90deg,
             rgba(0,255,136,0.035) 1px,
@@ -130,46 +118,30 @@ a {
 }
 
 .blur {
-
     position: fixed;
-
     width: 350px;
-
     height: 350px;
-
     border-radius: 50%;
-
     background: var(--green);
-
     filter: blur(140px);
-
     opacity: 0.08;
-
     z-index: -2;
 }
 
 .blur.one {
-
     top: 10%;
-
     left: -100px;
 }
 
 .blur.two {
-
     bottom: 5%;
-
     right: -100px;
 }
 
 .scanline {
-
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     z-index: 20;
 
     background:
@@ -181,21 +153,15 @@ a {
         );
 }
 
-
 /* =========================
    NAVBAR
 ========================= */
 
 nav {
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     z-index: 100;
 
     backdrop-filter: blur(15px);
@@ -206,261 +172,182 @@ nav {
 }
 
 body.light nav {
-
     background: rgba(244,255,249,0.8);
 }
 
 .nav-container {
-
     max-width: 1150px;
-
     margin: auto;
 
     padding: 18px 25px;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 }
 
 .logo {
-
     color: var(--green);
-
     font-size: 20px;
-
     font-weight: bold;
 }
 
 .logo::after {
-
     content: "_";
-
     animation: blink 1s infinite;
 }
 
 .nav-links {
-
     display: flex;
-
     gap: 25px;
-
     align-items: center;
 }
 
 .nav-links a {
-
     color: var(--muted);
-
     font-size: 14px;
-
     transition: 0.25s;
 }
 
 .nav-links a:hover {
-
     color: var(--green);
 }
 
 .theme-btn {
-
     border: 1px solid var(--border);
-
     background: transparent;
-
     color: var(--green);
-
     padding: 7px 12px;
-
     border-radius: 6px;
-
     cursor: pointer;
-
-    font-family: inherit;
 }
-
 
 /* =========================
    GENERAL
 ========================= */
 
 .container {
-
     max-width: 1100px;
-
     margin: auto;
-
     padding: 0 25px;
 }
 
 section {
-
     padding: 110px 0;
 }
 
 .section-title {
-
     margin-bottom: 50px;
 }
 
 .section-title h2 {
-
     font-size: 34px;
-
     margin-bottom: 8px;
 }
 
 .section-title h2 span {
-
     color: var(--green);
 }
 
 .section-title p {
-
     color: var(--muted);
-
     font-size: 14px;
 }
 
 .reveal {
-
     opacity: 0;
-
     transform: translateY(35px);
-
     transition: 0.8s ease;
 }
 
 .reveal.active {
-
     opacity: 1;
-
     transform: translateY(0);
 }
-
 
 /* =========================
    HERO
 ========================= */
 
 .hero {
-
     min-height: 100vh;
-
     display: flex;
-
     align-items: center;
-
     padding-top: 100px;
 }
 
 .hero-grid {
-
     display: grid;
-
     grid-template-columns: 1.2fr 0.8fr;
-
     gap: 60px;
-
     align-items: center;
 }
 
 .status {
-
     color: var(--green);
-
     font-size: 14px;
-
     margin-bottom: 20px;
 }
 
 .hero h1 {
-
     font-size: clamp(40px, 6vw, 72px);
-
     line-height: 1.1;
-
     margin-bottom: 20px;
 }
 
 .hero h1 span {
-
     color: var(--green);
 }
 
 .hero h2 {
-
     font-size: 20px;
-
     color: var(--muted);
-
     font-weight: normal;
-
     margin-bottom: 25px;
 }
 
 .hero-description {
-
     max-width: 650px;
-
     color: var(--muted);
-
     margin-bottom: 30px;
 }
 
 .buttons {
-
     display: flex;
-
     gap: 15px;
-
     flex-wrap: wrap;
 }
 
 .btn {
-
     display: inline-block;
-
     padding: 12px 20px;
 
     border: 1px solid var(--green);
-
     border-radius: 6px;
 
     color: var(--green);
-
     transition: 0.3s;
 }
 
 .btn:hover {
-
     background: var(--green);
-
     color: #001b0e;
-
     box-shadow: 0 0 25px var(--shadow);
 }
 
 .btn.primary {
-
     background: var(--green);
-
     color: #001b0e;
 }
-
 
 /* =========================
    TERMINAL
 ========================= */
 
 .terminal {
-
     background: #020805;
 
     border: 1px solid var(--border);
-
     border-radius: 10px;
 
     overflow: hidden;
@@ -470,43 +357,33 @@ section {
 }
 
 .terminal-header {
-
     padding: 10px 15px;
-
     border-bottom: 1px solid var(--border);
 
     color: var(--muted);
-
     font-size: 13px;
 }
 
 .terminal-body {
-
     padding: 20px;
-
     min-height: 260px;
 
     color: var(--green);
-
     font-size: 13px;
 }
 
 .terminal-line {
-
     margin-bottom: 8px;
 }
 
 .terminal-muted {
-
     color: #7c9a8b;
 }
 
 .cursor {
-
     display: inline-block;
 
     width: 7px;
-
     height: 15px;
 
     background: var(--green);
@@ -517,26 +394,21 @@ section {
 }
 
 @keyframes blink {
-
     50% {
         opacity: 0;
     }
-
 }
-
 
 /* =========================
    ABOUT
 ========================= */
 
 .about {
-
     max-width: 900px;
 
     padding: 35px;
 
     border: 1px solid var(--border);
-
     border-radius: 12px;
 
     background: var(--card);
@@ -547,50 +419,40 @@ section {
 }
 
 .about p {
-
     color: var(--muted);
 
     font-family: Arial, sans-serif;
 
     font-size: 16px;
-
     line-height: 1.9;
 }
 
 .about strong {
-
     color: var(--green);
 }
-
 
 /* =========================
    SKILLS
 ========================= */
 
 .skills-grid {
-
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 20px;
 }
 
 .skill-card {
-
     padding: 25px;
 
     background: var(--card);
 
     border: 1px solid var(--border);
-
     border-radius: 10px;
 
     transition: 0.3s;
 }
 
 .skill-card:hover {
-
     transform: translateY(-6px);
 
     border-color: var(--green);
@@ -599,50 +461,37 @@ section {
 }
 
 .skill-number {
-
     color: var(--green);
-
     font-size: 13px;
-
     margin-bottom: 15px;
 }
 
 .skill-card h3 {
-
     margin-bottom: 10px;
 }
 
 .skill-card p {
-
     color: var(--muted);
-
     font-size: 14px;
 }
 
-
 /* =========================
-   LEARNING JOURNEY
+   TIMELINE
 ========================= */
 
 .timeline {
-
     position: relative;
-
     max-width: 900px;
-
     margin: auto;
 }
 
 .timeline::before {
-
     content: "";
 
     position: absolute;
 
     left: 10px;
-
     top: 0;
-
     bottom: 0;
 
     width: 1px;
@@ -651,7 +500,6 @@ section {
 }
 
 .timeline-item {
-
     position: relative;
 
     margin-bottom: 50px;
@@ -660,22 +508,18 @@ section {
 }
 
 .timeline-item:last-child {
-
     margin-bottom: 0;
 }
 
 .timeline-item::before {
-
     content: "";
 
     position: absolute;
 
     left: 4px;
-
     top: 7px;
 
     width: 13px;
-
     height: 13px;
 
     border-radius: 50%;
@@ -686,23 +530,17 @@ section {
 }
 
 .timeline-item .date {
-
     color: var(--green);
-
     font-size: 13px;
-
     margin-bottom: 8px;
 }
 
 .timeline-item h3 {
-
     font-size: 21px;
-
     margin-bottom: 8px;
 }
 
 .timeline-item p {
-
     color: var(--muted);
 
     font-family: Arial, sans-serif;
@@ -712,26 +550,20 @@ section {
     max-width: 800px;
 }
 
-
 /* =========================
    PROJECTS
 ========================= */
 
 .projects-grid {
-
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 20px;
 }
 
 .project-card {
-
     padding: 28px;
 
     border: 1px solid var(--border);
-
     border-radius: 10px;
 
     background: var(--card);
@@ -740,53 +572,40 @@ section {
 }
 
 .project-card:hover {
-
     transform: translateY(-6px);
-
     border-color: var(--green);
 }
 
 .project-tag {
-
     color: var(--green);
-
     font-size: 12px;
-
     margin-bottom: 15px;
 }
 
 .project-card h3 {
-
     margin-bottom: 12px;
 }
 
 .project-card p {
-
     color: var(--muted);
 
     font-family: Arial, sans-serif;
 
     font-size: 14px;
-
     line-height: 1.7;
 }
-
 
 /* =========================
    ACHIEVEMENTS
 ========================= */
 
 .achievements {
-
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 20px;
 }
 
 .achievement {
-
     text-align: center;
 
     padding: 25px 15px;
@@ -799,30 +618,22 @@ section {
 }
 
 .achievement-number {
-
     font-size: 30px;
-
     color: var(--green);
-
     margin-bottom: 8px;
 }
 
 .achievement p {
-
     color: var(--muted);
-
     font-size: 13px;
 }
-
 
 /* =========================
    CONTACT
 ========================= */
 
 .contact-box {
-
     max-width: 850px;
-
     margin: auto;
 
     text-align: center;
@@ -830,35 +641,27 @@ section {
     padding: 50px 30px;
 
     border: 1px solid var(--border);
-
     border-radius: 12px;
 
     background: var(--card);
 }
 
 .contact-box h2 {
-
     font-size: 30px;
-
     margin-bottom: 15px;
 }
 
 .contact-box h2 span {
-
     color: var(--green);
 }
 
 .contact-box p {
-
     color: var(--muted);
-
     margin-bottom: 30px;
 }
 
 .socials {
-
     display: flex;
-
     justify-content: center;
 
     gap: 15px;
@@ -867,7 +670,6 @@ section {
 }
 
 .socials a {
-
     border: 1px solid var(--border);
 
     padding: 10px 16px;
@@ -880,19 +682,15 @@ section {
 }
 
 .socials a:hover {
-
     color: var(--green);
-
     border-color: var(--green);
 }
-
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-
     border-top: 1px solid var(--border);
 
     padding: 30px 20px;
@@ -904,122 +702,39 @@ footer {
     font-size: 13px;
 }
 
-
 /* =========================
-   RESPONSIVE
+   ENTRY SCREEN
 ========================= */
-
-@media (max-width: 900px) {
-
-    .hero-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-    .skills-grid,
-    .projects-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .achievements {
-
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .nav-links {
-
-        gap: 12px;
-    }
-
-    .nav-links a {
-
-        font-size: 12px;
-    }
-
-}
-
-
-@media (max-width: 650px) {
-
-    section {
-
-        padding: 80px 0;
-    }
-
-    .nav-container {
-
-        padding: 15px;
-    }
-
-    .nav-links {
-
-        display: none;
-    }
-
-    .hero {
-
-        padding-top: 120px;
-    }
-
-    .hero h1 {
-
-        font-size: 42px;
-    }
-
-    .hero h2 {
-
-        font-size: 17px;
-    }
-
-    .skills-grid,
-    .projects-grid,
-    .achievements {
-
-        grid-template-columns: 1fr;
-    }
-
-    .section-title h2 {
-
-        font-size: 28px;
-    }
-
-    .about {
-
-        padding: 25px;
-    }
-
-    .terminal-body {
-
-        min-height: 220px;
-
-        font-size: 12px;
-    }
-
-}
-
-
-/* =========================
-   ENTRY / ADMIN ACCESS
-========================= */
-
-body.entry-locked {
-    overflow: hidden;
-}
 
 .entry-screen {
     position: fixed;
     inset: 0;
+
     z-index: 10000;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     padding: 25px;
+
     background:
-        radial-gradient(circle at 20% 20%, rgba(0,255,136,0.10), transparent 30%),
-        radial-gradient(circle at 80% 80%, rgba(0,255,136,0.08), transparent 30%),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,255,136,0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(0,255,136,0.08),
+            transparent 30%
+        ),
         var(--bg);
-    transition: opacity .45s ease, visibility .45s ease;
+
+    transition:
+        opacity .45s ease,
+        visibility .45s ease;
 }
 
 .entry-screen.hidden {
@@ -1030,13 +745,22 @@ body.entry-locked {
 
 .entry-box {
     width: min(460px, 100%);
+
     padding: 45px 35px;
+
     text-align: center;
+
     border: 1px solid var(--border);
+
     border-radius: 16px;
-    background: rgba(6, 16, 12, 0.82);
+
+    background: rgba(6,16,12,0.82);
+
     backdrop-filter: blur(18px);
-    box-shadow: 0 0 55px rgba(0,255,136,0.10);
+
+    box-shadow:
+        0 0 55px rgba(0,255,136,0.10);
+
     animation: entryIn .7s ease;
 }
 
@@ -1046,8 +770,11 @@ body.light .entry-box {
 
 .entry-logo {
     color: var(--green);
+
     font-size: 28px;
+
     font-weight: bold;
+
     margin-bottom: 8px;
 }
 
@@ -1058,56 +785,77 @@ body.light .entry-box {
 
 .entry-subtitle {
     color: var(--muted);
+
     font-size: 13px;
+
     margin-bottom: 35px;
 }
 
 .entry-question {
     font-size: 18px;
+
     margin-bottom: 22px;
 }
 
 .entry-buttons {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 14px;
 }
 
 .entry-choice {
     min-height: 105px;
+
     padding: 20px 15px;
+
     border: 1px solid var(--border);
+
     border-radius: 10px;
+
     background: rgba(0,255,136,0.025);
+
     color: var(--text);
+
     cursor: pointer;
-    font-family: inherit;
+
     transition: .3s ease;
 }
 
 .entry-choice:hover {
     transform: translateY(-5px);
+
     border-color: var(--green);
+
     box-shadow: 0 0 25px var(--shadow);
+
     color: var(--green);
 }
 
 .entry-icon {
     display: block;
+
     font-size: 28px;
+
     margin-bottom: 8px;
 }
 
 .entry-label {
     display: block;
+
     font-size: 14px;
+
     font-weight: bold;
 }
 
 .entry-description {
     display: block;
+
     margin-top: 5px;
+
     color: var(--muted);
+
     font-size: 11px;
 }
 
@@ -1117,6 +865,7 @@ body.light .entry-box {
 
 .admin-login.active {
     display: block;
+
     animation: entryIn .35s ease;
 }
 
@@ -1126,13 +875,17 @@ body.light .entry-box {
 
 .login-title {
     color: var(--green);
+
     font-size: 21px;
+
     margin-bottom: 8px;
 }
 
 .login-subtitle {
     color: var(--muted);
+
     font-size: 12px;
+
     margin-bottom: 25px;
 }
 
@@ -1146,20 +899,29 @@ body.light .entry-box {
 
 .login-field label {
     display: block;
+
     color: var(--muted);
+
     font-size: 12px;
+
     margin-bottom: 7px;
 }
 
 .login-field input {
     width: 100%;
+
     padding: 13px 14px;
+
     border: 1px solid var(--border);
+
     border-radius: 7px;
+
     outline: none;
+
     background: rgba(0,0,0,0.25);
+
     color: var(--text);
-    font-family: inherit;
+
     transition: .25s;
 }
 
@@ -1169,100 +931,105 @@ body.light .login-field input {
 
 .login-field input:focus {
     border-color: var(--green);
+
     box-shadow: 0 0 15px var(--shadow);
 }
 
 .login-actions {
     display: flex;
+
     gap: 10px;
+
     margin-top: 20px;
 }
 
 .login-submit,
 .login-back {
     flex: 1;
+
     padding: 12px;
+
     border-radius: 7px;
-    font-family: inherit;
+
     cursor: pointer;
+
     transition: .25s;
 }
 
 .login-submit {
     border: 1px solid var(--green);
+
     background: var(--green);
+
     color: #001b0e;
+
     font-weight: bold;
 }
 
 .login-submit:hover {
     box-shadow: 0 0 22px var(--shadow);
+
     transform: translateY(-2px);
 }
 
 .login-back {
     border: 1px solid var(--border);
+
     background: transparent;
+
     color: var(--muted);
 }
 
 .login-back:hover {
     border-color: var(--green);
+
     color: var(--green);
 }
 
 .login-error {
     min-height: 20px;
+
     margin-top: 12px;
+
     color: #ff6b6b;
+
     font-size: 12px;
+
     text-align: center;
 }
 
+/* =========================
+   ADMIN BADGE
+========================= */
+
 .admin-badge {
     display: none;
+
     position: fixed;
+
     top: 85px;
     right: 20px;
+
     z-index: 90;
+
     padding: 7px 12px;
+
     border: 1px solid var(--border);
+
     border-radius: 6px;
+
     background: rgba(6,16,12,.85);
+
     color: var(--green);
+
     font-size: 11px;
+
     backdrop-filter: blur(10px);
 }
 
 .admin-badge.visible {
     display: block;
 }
-
-@keyframes entryIn {
-    from {
-        opacity: 0;
-        transform: translateY(18px) scale(.98);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@media (max-width: 520px) {
-    .entry-box {
-        padding: 35px 22px;
-    }
-
-    .entry-buttons {
-        grid-template-columns: 1fr;
-    }
-
-    .entry-choice {
-        min-height: 90px;
-    }
-}
-
 
 /* =========================
    NEWS
@@ -1274,36 +1041,53 @@ body.light .login-field input {
 
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 22px;
 }
 
 .news-card {
     overflow: hidden;
+
     border: 1px solid var(--border);
+
     border-radius: 12px;
+
     background: rgba(6,16,12,.72);
-    box-shadow: 0 0 30px rgba(0,255,136,.04);
+
+    box-shadow:
+        0 0 30px rgba(0,255,136,.04);
+
     transition: .25s;
 }
 
 .news-card:hover {
     transform: translateY(-5px);
+
     border-color: var(--green);
-    box-shadow: 0 0 28px var(--shadow);
+
+    box-shadow:
+        0 0 28px var(--shadow);
 }
 
 .news-image-wrap {
     width: 100%;
+
     aspect-ratio: 16 / 9;
+
     overflow: hidden;
+
     background: rgba(0,255,136,.04);
 }
 
 .news-image {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
 }
 
@@ -1313,30 +1097,43 @@ body.light .login-field input {
 
 .news-date {
     color: var(--green);
+
     font-size: 11px;
+
     letter-spacing: 1px;
+
     text-transform: uppercase;
+
     margin-bottom: 10px;
 }
 
 .news-card h3 {
     margin: 0 0 10px;
+
     font-size: 20px;
 }
 
 .news-card p {
     margin: 0;
+
     color: var(--muted);
+
     line-height: 1.7;
+
     white-space: pre-line;
 }
 
 .news-admin-panel {
     display: none;
+
     margin-bottom: 35px;
+
     padding: 25px;
+
     border: 1px solid var(--border);
+
     border-radius: 12px;
+
     background: rgba(6,16,12,.78);
 }
 
@@ -1346,43 +1143,55 @@ body.light .login-field input {
 
 .news-admin-header {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 15px;
+
     margin-bottom: 20px;
 }
 
 .news-admin-header h3 {
     margin: 0;
+
     color: var(--green);
 }
 
 .news-form {
     display: grid;
+
     gap: 14px;
 }
 
 .news-form input,
 .news-form textarea {
     width: 100%;
-    box-sizing: border-box;
+
     padding: 13px 14px;
+
     border: 1px solid var(--border);
+
     border-radius: 7px;
+
     outline: none;
+
     background: rgba(255,255,255,.04);
+
     color: var(--text);
-    font-family: inherit;
 }
 
 .news-form input:focus,
 .news-form textarea:focus {
     border-color: var(--green);
+
     box-shadow: 0 0 15px var(--shadow);
 }
 
 .news-form textarea {
     min-height: 130px;
+
     resize: vertical;
 }
 
@@ -1392,16 +1201,22 @@ body.light .login-field input {
 
 .news-preview {
     display: none;
+
     max-width: 320px;
     max-height: 180px;
+
     object-fit: cover;
+
     border: 1px solid var(--border);
+
     border-radius: 8px;
 }
 
 .news-form-actions {
     display: flex;
+
     gap: 10px;
+
     flex-wrap: wrap;
 }
 
@@ -1409,22 +1224,28 @@ body.light .login-field input {
 .news-clear-btn,
 .news-delete-btn {
     border: 1px solid var(--green);
+
     border-radius: 7px;
+
     padding: 10px 16px;
-    font-family: inherit;
+
     cursor: pointer;
+
     transition: .2s;
 }
 
 .news-publish-btn {
     background: var(--green);
+
     color: #001b0e;
+
     font-weight: bold;
 }
 
 .news-clear-btn,
 .news-delete-btn {
     background: transparent;
+
     color: var(--green);
 }
 
@@ -1432,59 +1253,163 @@ body.light .login-field input {
 .news-clear-btn:hover,
 .news-delete-btn:hover {
     transform: translateY(-2px);
+
     box-shadow: 0 0 18px var(--shadow);
 }
 
 .news-delete-btn {
     margin-top: 15px;
+
     border-color: #ff6b6b;
+
     color: #ff6b6b;
+
     font-size: 11px;
 }
 
 .news-empty {
     grid-column: 1 / -1;
+
     padding: 35px;
+
     border: 1px dashed var(--border);
+
     border-radius: 10px;
+
     color: var(--muted);
+
     text-align: center;
 }
 
 .news-status {
     min-height: 18px;
+
     color: var(--green);
+
     font-size: 12px;
 }
 
-@media (max-width: 900px) {
+/* =========================
+   ANIMATION
+========================= */
 
-    .news-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+@keyframes entryIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.98);
     }
 
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
-@media (max-width: 600px) {
+/* =========================
+   RESPONSIVE
+========================= */
 
+@media (max-width: 900px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievements {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    section {
+        padding: 80px 0;
+    }
+
+    .nav-container {
+        padding: 15px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 17px;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .achievements,
     .news-grid {
         grid-template-columns: 1fr;
     }
 
-    .news-admin-header {
-        align-items: flex-start;
-        flex-direction: column;
+    .section-title h2 {
+        font-size: 28px;
     }
 
+    .about {
+        padding: 25px;
+    }
+
+    .terminal-body {
+        min-height: 220px;
+
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .entry-box {
+        padding: 35px 22px;
+    }
+
+    .entry-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .entry-choice {
+        min-height: 90px;
+    }
+
+    .news-admin-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
 }
 
 </style>
-
 </head>
 
-
 <body class="entry-locked">
-
 
 <!-- =========================
      ENTRY SCREEN
@@ -1501,7 +1426,6 @@ body.light .login-field input {
         <div class="entry-subtitle">
             cybersecurity portfolio // access portal
         </div>
-
 
         <div id="entryChoicePanel">
 
@@ -1530,7 +1454,6 @@ body.light .login-field input {
 
                 </button>
 
-
                 <button
                     class="entry-choice"
                     onclick="showAdminLogin()"
@@ -1554,7 +1477,6 @@ body.light .login-field input {
 
         </div>
 
-
         <!-- ADMIN LOGIN -->
 
         <div
@@ -1569,7 +1491,6 @@ body.light .login-field input {
             <div class="login-subtitle">
                 Enter your credentials to continue
             </div>
-
 
             <form
                 class="login-form"
@@ -1592,7 +1513,6 @@ body.light .login-field input {
 
                 </div>
 
-
                 <div class="login-field">
 
                     <label for="adminPassword">
@@ -1608,7 +1528,6 @@ body.light .login-field input {
                     >
 
                 </div>
-
 
                 <div class="login-actions">
 
@@ -1629,7 +1548,6 @@ body.light .login-field input {
 
                 </div>
 
-
                 <div
                     class="login-error"
                     id="loginError"
@@ -1643,7 +1561,6 @@ body.light .login-field input {
 
 </div>
 
-
 <div
     class="admin-badge"
     id="adminBadge"
@@ -1651,15 +1568,12 @@ body.light .login-field input {
     ADMIN MODE_
 </div>
 
-
 <div class="network"></div>
 
 <div class="blur one"></div>
-
 <div class="blur two"></div>
 
 <div class="scanline"></div>
-
 
 <!-- =========================
      NAVBAR
@@ -1675,7 +1589,6 @@ body.light .login-field input {
         >
             KAIZEN
         </a>
-
 
         <div class="nav-links">
 
@@ -1720,7 +1633,6 @@ body.light .login-field input {
 
 </nav>
 
-
 <!-- =========================
      HERO
 ========================= -->
@@ -1737,27 +1649,20 @@ body.light .login-field input {
             <div>
 
                 <div class="status">
-                    &gt; cybersecurity_mode: ACTIVE_
+                    > cybersecurity_mode: ACTIVE_
                 </div>
 
-
                 <h1>
-
                     Hello, I'm
-
                     <span>
                         Kaizen
                     </span>
-
                     (Khushnud)
-
                 </h1>
-
 
                 <h2>
                     Cybersecurity Student & Aspiring Security Specialist
                 </h2>
-
 
                 <p class="hero-description">
 
@@ -1770,7 +1675,6 @@ body.light .login-field input {
                     practical security skills.
 
                 </p>
-
 
                 <div class="buttons">
 
@@ -1792,13 +1696,11 @@ body.light .login-field input {
 
             </div>
 
-
             <div class="terminal">
 
                 <div class="terminal-header">
                     kaizen@cyber: ~
                 </div>
-
 
                 <div class="terminal-body">
 
@@ -1810,7 +1712,6 @@ body.light .login-field input {
                         Kaizen
                     </div>
 
-
                     <div class="terminal-line">
                         $ role
                     </div>
@@ -1818,7 +1719,6 @@ body.light .login-field input {
                     <div class="terminal-line terminal-muted">
                         Cybersecurity Student
                     </div>
-
 
                     <div class="terminal-line">
                         $ interests
@@ -1828,7 +1728,6 @@ body.light .login-field input {
                         Linux · Networking · Security · Programming
                     </div>
 
-
                     <div class="terminal-line">
                         $ status
                     </div>
@@ -1836,7 +1735,6 @@ body.light .login-field input {
                     <div class="terminal-line terminal-muted">
                         Learning & Building...
                     </div>
-
 
                     <span class="cursor"></span>
 
@@ -1849,7 +1747,6 @@ body.light .login-field input {
     </div>
 
 </section>
-
 
 <!-- =========================
      ABOUT
@@ -1874,97 +1771,63 @@ body.light .login-field input {
 
         </div>
 
-
         <div class="about">
 
             <p>
-
                 I was born in Sirdarya on December 12, 2008.
                 I studied at School No. 35 and graduated in 2026.
-
             </p>
-
 
             <br>
 
-
             <p>
-
                 Since childhood, I have been genuinely interested
-                in technology.
-
-                This curiosity motivated me to start learning
-                programming, which led me to join
+                in technology. This curiosity motivated me to start
+                learning programming, which led me to join
                 <strong>Najot Ta'lim</strong>.
-
                 I studied there for four months, followed by
                 one month focused on cybersecurity.
-
             </p>
-
 
             <br>
 
-
             <p>
-
                 I eventually decided to continue my cybersecurity
-                journey independently.
-
-                I discovered free educational resources and
-                started exploring cybersecurity through online
-                courses, videos, and practical learning.
-
-                This experience taught me that learning does not
-                always have to happen inside a classroom —
-                curiosity and consistency can take you a long way.
-
+                journey independently. I discovered free educational
+                resources and started exploring cybersecurity through
+                online courses, videos, and practical learning.
             </p>
-
 
             <br>
 
-
             <p>
-
                 After graduating from school, I carefully considered
-                my university options.
-
-                While following the latest developments in
-                technology and education, I discovered
+                my university options. While following the latest
+                developments in technology and education, I discovered
                 <strong>Cyber University</strong>.
-
-                The university caught my attention because of
-                its focus on technology and cybersecurity,
-                as well as its connection with the government.
-
             </p>
-
 
             <br>
 
-
             <p>
-
                 Choosing <strong>Cyber University</strong>
                 became an important step in my journey into
                 technology and cybersecurity.
-
-                Today, I am continuing to develop my knowledge
-                in cybersecurity, Linux, networking, programming,
-                and information technologies.
-
             </p>
-
 
             <br>
 
+            <p>
+                Today, I am continuing to develop my knowledge
+                in cybersecurity, Linux, networking, programming,
+                and information technologies.
+            </p>
+
+            <br>
 
             <p>
-
                 Thank you for visiting my website and taking
                 the time to learn more about me.
-
             </p>
 
         </div>
@@ -1972,7 +1835,6 @@ body.light .login-field input {
     </div>
 
 </section>
-
 
 <!-- =========================
      SKILLS
@@ -1997,9 +1859,7 @@ body.light .login-field input {
 
         </div>
 
-
         <div class="skills-grid">
-
 
             <div class="skill-card">
 
@@ -2012,15 +1872,12 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Learning security fundamentals,
                     vulnerabilities, security concepts
                     and defensive practices.
-
                 </p>
 
             </div>
-
 
             <div class="skill-card">
 
@@ -2033,15 +1890,12 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Working with Linux environments,
                     terminal commands, system information
                     and basic administration.
-
                 </p>
 
             </div>
-
 
             <div class="skill-card">
 
@@ -2054,15 +1908,12 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Studying networks, protocols,
                     IP addresses, ports, OSI model
                     and network security.
-
                 </p>
 
             </div>
-
 
             <div class="skill-card">
 
@@ -2075,15 +1926,12 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Developing programming fundamentals
                     and building small web and
                     technology projects.
-
                 </p>
 
             </div>
-
 
             <div class="skill-card">
 
@@ -2096,15 +1944,12 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Practicing cybersecurity through
                     legal labs, CTF platforms and
                     hands-on environments.
-
                 </p>
 
             </div>
-
 
             <div class="skill-card">
 
@@ -2117,15 +1962,12 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Using Git and GitHub to manage
                     projects, source code and
                     personal development work.
-
                 </p>
 
             </div>
-
 
         </div>
 
@@ -2133,9 +1975,8 @@ body.light .login-field input {
 
 </section>
 
-
 <!-- =========================
-     LEARNING JOURNEY
+     JOURNEY
 ========================= -->
 
 <section
@@ -2157,9 +1998,7 @@ body.light .login-field input {
 
         </div>
 
-
         <div class="timeline">
-
 
             <div class="timeline-item">
 
@@ -2172,16 +2011,12 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Studied English for 1 year and 2 months,
                     developing listening, reading, writing
-                    and speaking skills for academic and
-                    professional communication.
-
+                    and speaking skills.
                 </p>
 
             </div>
-
 
             <div class="timeline-item">
 
@@ -2194,17 +2029,13 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Completed a 5-month IT learning journey.
-
                     Studied programming and IT fundamentals
                     for four months, followed by one month
                     focused on cybersecurity.
-
                 </p>
 
             </div>
-
 
             <div class="timeline-item">
 
@@ -2217,17 +2048,13 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Currently studying Cybersecurity Management.
-
                     Developing knowledge in cybersecurity,
                     networking, Linux, information technologies
                     and security practices.
-
                 </p>
 
             </div>
-
 
             <div class="timeline-item">
 
@@ -2240,23 +2067,19 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Continuously improving my cybersecurity
                     and IT skills through practical labs,
                     Linux, networking, programming, personal
                     projects and security platforms.
-
                 </p>
 
             </div>
-
 
         </div>
 
     </div>
 
 </section>
-
 
 <!-- =========================
      PROJECTS
@@ -2281,9 +2104,7 @@ body.light .login-field input {
 
         </div>
 
-
         <div class="projects-grid">
-
 
             <div class="project-card">
 
@@ -2296,16 +2117,13 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     A personal cybersecurity portfolio
                     website built with HTML, CSS and
                     JavaScript to showcase my skills,
                     journey, projects and learning progress.
-
                 </p>
 
             </div>
-
 
             <div class="project-card">
 
@@ -2318,16 +2136,13 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     A concept for a marshrutka tracking
                     platform designed to help passengers
                     see vehicle locations, estimated arrival
                     times and available seats.
-
                 </p>
 
             </div>
-
 
             <div class="project-card">
 
@@ -2340,23 +2155,19 @@ body.light .login-field input {
                 </h3>
 
                 <p>
-
                     Practical learning through Linux,
                     networking, security labs, CTF environments
                     and other legal cybersecurity practice
                     platforms.
-
                 </p>
 
             </div>
-
 
         </div>
 
     </div>
 
 </section>
-
 
 <!-- =========================
      NEWS
@@ -2381,6 +2192,7 @@ body.light .login-field input {
 
         </div>
 
+        <!-- ADMIN NEWS PANEL -->
 
         <div
             class="news-admin-panel"
@@ -2403,7 +2215,6 @@ body.light .login-field input {
 
             </div>
 
-
             <form
                 class="news-form"
                 id="newsForm"
@@ -2418,14 +2229,12 @@ body.light .login-field input {
                     required
                 >
 
-
                 <textarea
                     id="newsText"
                     placeholder="Write your news text..."
                     maxlength="5000"
                     required
                 ></textarea>
-
 
                 <input
                     type="file"
@@ -2434,13 +2243,11 @@ body.light .login-field input {
                     required
                 >
 
-
                 <img
                     id="newsPreview"
                     class="news-preview"
                     alt="News image preview"
                 >
-
 
                 <div class="news-form-actions">
 
@@ -2450,7 +2257,6 @@ body.light .login-field input {
                     >
                         + Publish News
                     </button>
-
 
                     <button
                         type="button"
@@ -2462,7 +2268,6 @@ body.light .login-field input {
 
                 </div>
 
-
                 <div
                     class="news-status"
                     id="newsStatus"
@@ -2472,7 +2277,6 @@ body.light .login-field input {
 
         </div>
 
-
         <div
             class="news-grid"
             id="newsGrid"
@@ -2481,7 +2285,6 @@ body.light .login-field input {
     </div>
 
 </section>
-
 
 <!-- =========================
      ACHIEVEMENTS
@@ -2506,9 +2309,7 @@ body.light .login-field input {
 
         </div>
 
-
         <div class="achievements">
-
 
             <div class="achievement">
 
@@ -2522,7 +2323,6 @@ body.light .login-field input {
 
             </div>
 
-
             <div class="achievement">
 
                 <div class="achievement-number">
@@ -2534,7 +2334,6 @@ body.light .login-field input {
                 </p>
 
             </div>
-
 
             <div class="achievement">
 
@@ -2548,7 +2347,6 @@ body.light .login-field input {
 
             </div>
 
-
             <div class="achievement">
 
                 <div class="achievement-number">
@@ -2561,13 +2359,11 @@ body.light .login-field input {
 
             </div>
 
-
         </div>
 
     </div>
 
 </section>
-
 
 <!-- =========================
      CONTACT
@@ -2586,16 +2382,11 @@ body.light .login-field input {
                 Let's <span>Connect</span>
             </h2>
 
-
             <p>
-
                 Interested in technology, cybersecurity
                 or collaboration?
-
                 Feel free to reach out.
-
             </p>
-
 
             <div class="socials">
 
@@ -2607,7 +2398,6 @@ body.light .login-field input {
                     GitHub
                 </a>
 
-
                 <a
                     href="https://t.me/xush_me"
                     target="_blank"
@@ -2616,7 +2406,6 @@ body.light .login-field input {
                     Telegram
                 </a>
 
-
                 <a
                     href="https://instagram.com/ka1zen.x_"
                     target="_blank"
@@ -2624,7 +2413,6 @@ body.light .login-field input {
                 >
                     Instagram
                 </a>
-
 
                 <a
                     href="mailto:xushnudxudoyberdiev25@gmail.com"
@@ -2640,17 +2428,13 @@ body.light .login-field input {
 
 </section>
 
-
 <!-- =========================
      FOOTER
 ========================= -->
 
 <footer>
-
     © 2026 Kaizen. Built with curiosity & code.
-
 </footer>
-
 
 <!-- =========================
      FIREBASE SDK
@@ -2664,7 +2448,6 @@ body.light .login-field input {
 
 <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-storage-compat.js"></script>
 
-
 <script>
 
 /* =========================
@@ -2675,33 +2458,18 @@ function toggleTheme() {
 
     document.body.classList.toggle("light");
 
-    if (
+    localStorage.setItem(
+        "theme",
         document.body.classList.contains("light")
-    ) {
-
-        localStorage.setItem(
-            "theme",
-            "light"
-        );
-
-    } else {
-
-        localStorage.setItem(
-            "theme",
-            "dark"
-        );
-
-    }
-
+            ? "light"
+            : "dark"
+    );
 }
-
 
 if (
     localStorage.getItem("theme") === "light"
 ) {
-
     document.body.classList.add("light");
-
 }
 
 
@@ -2712,10 +2480,8 @@ if (
 const revealElements =
     document.querySelectorAll(".reveal");
 
-
 const revealObserver =
     new IntersectionObserver(
-
         (entries) => {
 
             entries.forEach(
@@ -2735,25 +2501,20 @@ const revealObserver =
             );
 
         },
-
         {
             threshold: 0.12
         }
-
     );
-
 
 revealElements.forEach(
     (element) => {
-
         revealObserver.observe(element);
-
     }
 );
 
 
 /* =========================
-   CONSOLE MESSAGE
+   CONSOLE
 ========================= */
 
 console.log(
@@ -2766,26 +2527,20 @@ console.log(
     "color:#8da99b;font-size:14px;"
 );
 
-console.log(
-    "%cKeep learning. Keep building.",
-    "color:#00ff88;font-size:14px;"
-);
-
 
 /* =========================
    ADMIN CONFIG
 ========================= */
 
-const ADMIN_USERNAME = "Xushnud_";
+const ADMIN_USERNAME = "xusnud";
+
+const FIREBASE_ADMIN_EMAIL =
+    "xushnudxudoyberdiev25@gmail.com";
 
 
 /* =========================
    FIREBASE CONFIG
 ========================= */
-
-const FIREBASE_ADMIN_EMAIL =
-    "xushnudxudoyberdiev25@gmail.com";
-
 
 const FIREBASE_CONFIG = {
 
@@ -2809,25 +2564,12 @@ const FIREBASE_CONFIG = {
 
     measurementId:
         "G-1NRJF859VN"
-
 };
 
 
 /* =========================
    FIREBASE STATE
 ========================= */
-
-const FIREBASE_CONFIG_READY =
-    Boolean(
-        FIREBASE_CONFIG.apiKey &&
-        FIREBASE_CONFIG.authDomain &&
-        FIREBASE_CONFIG.projectId &&
-        FIREBASE_CONFIG.storageBucket &&
-        FIREBASE_CONFIG.messagingSenderId &&
-        FIREBASE_CONFIG.appId &&
-        FIREBASE_ADMIN_EMAIL
-    );
-
 
 let firebaseReady = false;
 
@@ -2839,15 +2581,14 @@ let firebaseAuth = null;
 
 
 /* =========================
-   FIREBASE INITIALIZATION
+   FIREBASE INIT
 ========================= */
 
-if (
-    typeof firebase !== "undefined" &&
-    FIREBASE_CONFIG_READY
-) {
+try {
 
-    try {
+    if (
+        typeof firebase !== "undefined"
+    ) {
 
         if (!firebase.apps.length) {
 
@@ -2873,44 +2614,32 @@ if (
             "color:#00ff88;font-size:16px;font-weight:bold;"
         );
 
-    } catch (error) {
-
-        console.error(
-            "Firebase initialization failed:",
-            error
-        );
-
-        firebaseReady = false;
-
     }
 
-} else {
+} catch (error) {
 
     console.error(
-        "Firebase configuration is incomplete."
+        "Firebase initialization failed:",
+        error
     );
 
+    firebaseReady = false;
 }
 
 
 /* =========================
-   ENTRY
+   GUEST
 ========================= */
 
 function enterAsGuest() {
-
-    const entryScreen =
-        document.getElementById(
-            "entryScreen"
-        );
 
     document.body.classList.remove(
         "entry-locked"
     );
 
-    entryScreen.classList.add(
-        "hidden"
-    );
+    document
+        .getElementById("entryScreen")
+        .classList.add("hidden");
 
 }
 
@@ -2943,7 +2672,6 @@ function showAdminLogin() {
         },
         100
     );
-
 }
 
 
@@ -2972,7 +2700,6 @@ function backToEntryChoices() {
     document
         .getElementById("loginError")
         .textContent = "";
-
 }
 
 
@@ -2984,43 +2711,39 @@ async function adminLogin(event) {
 
     event.preventDefault();
 
-
     const username =
         document
             .getElementById("adminUsername")
             .value
             .trim();
 
-
     const password =
         document
             .getElementById("adminPassword")
             .value;
 
-
     const error =
         document
             .getElementById("loginError");
 
-
     error.textContent = "";
 
 
+    /* Username tekshiruvi */
+
     if (
-        username !== ADMIN_USERNAME
+        username.toLowerCase() !==
+        ADMIN_USERNAME.toLowerCase()
     ) {
 
         error.textContent =
-            "Access denied. Incorrect username or password.";
-
-        document
-            .getElementById("adminPassword")
-            .value = "";
+            "Incorrect username.";
 
         return;
-
     }
 
+
+    /* Firebase tekshiruvi */
 
     if (
         !firebaseReady ||
@@ -3031,7 +2754,6 @@ async function adminLogin(event) {
             "Firebase is not configured correctly.";
 
         return;
-
     }
 
 
@@ -3041,7 +2763,6 @@ async function adminLogin(event) {
             "Please enter your password.";
 
         return;
-
     }
 
 
@@ -3052,9 +2773,6 @@ async function adminLogin(event) {
                 FIREBASE_ADMIN_EMAIL,
                 password
             );
-
-
-        error.textContent = "";
 
 
         sessionStorage.setItem(
@@ -3097,59 +2815,44 @@ async function adminLogin(event) {
         );
 
 
-        let message =
-            "Access denied. Incorrect username or password.";
-
-
         if (
-            authError &&
-            authError.code ===
-            "auth/user-not-found"
-        ) {
-
-            message =
-                "Admin Firebase account was not found.";
-
-        }
-
-
-        if (
-            authError &&
             authError.code ===
             "auth/invalid-credential"
         ) {
 
-            message =
+            error.textContent =
                 "Incorrect username or password.";
 
-        }
-
-
-        if (
-            authError &&
+        } else if (
             authError.code ===
-            "auth/invalid-login-credentials"
+            "auth/user-not-found"
         ) {
 
-            message =
-                "Incorrect username or password.";
+            error.textContent =
+                "Admin Firebase account was not found.";
 
-        }
+        } else if (
+            authError.code ===
+            "auth/wrong-password"
+        ) {
 
+            error.textContent =
+                "Incorrect password.";
 
-        if (
-            authError &&
+        } else if (
             authError.code ===
             "auth/too-many-requests"
         ) {
 
-            message =
+            error.textContent =
                 "Too many login attempts. Try again later.";
 
+        } else {
+
+            error.textContent =
+                "Login failed. Check Firebase Authentication.";
+
         }
-
-
-        error.textContent = message;
 
 
         document
@@ -3162,7 +2865,7 @@ async function adminLogin(event) {
 
 
 /* =========================
-   FIREBASE AUTH STATE
+   AUTH STATE
 ========================= */
 
 if (
@@ -3222,34 +2925,11 @@ if (
 
 
 /* =========================
-   NEWS SYSTEM
+   NEWS CONFIG
 ========================= */
 
 const NEWS_COLLECTION =
     "news";
-
-
-/* =========================
-   LOCAL FALLBACK
-========================= */
-
-function getLocalNewsFallback() {
-
-    try {
-
-        return JSON.parse(
-            localStorage.getItem(
-                "kaizenNews"
-            ) || "[]"
-        );
-
-    } catch (error) {
-
-        return [];
-
-    }
-
-}
 
 
 /* =========================
@@ -3284,7 +2964,6 @@ function escapeHtml(value) {
             /'/g,
             "&#039;"
         );
-
 }
 
 
@@ -3328,7 +3007,6 @@ function formatNewsDate(
     }
 
     return fallback || "";
-
 }
 
 
@@ -3343,7 +3021,7 @@ async function getNews() {
         !db
     ) {
 
-        return getLocalNewsFallback();
+        return [];
 
     }
 
@@ -3376,14 +3054,13 @@ async function getNews() {
     } catch (error) {
 
         console.error(
-            "Could not load online news:",
+            "Could not load news:",
             error
         );
 
         return [];
 
     }
-
 }
 
 
@@ -3398,7 +3075,6 @@ async function renderNews() {
             "newsGrid"
         );
 
-
     if (!grid) return;
 
 
@@ -3408,30 +3084,21 @@ async function renderNews() {
     ) {
 
         grid.innerHTML = `
-
             <div class="news-empty">
-
-                // Online News is not configured yet.
-
+                // Firebase is not configured.
             </div>
-
         `;
 
         updateNewsAdminUI();
 
         return;
-
     }
 
 
     grid.innerHTML = `
-
         <div class="news-empty">
-
             // Loading news...
-
         </div>
-
     `;
 
 
@@ -3442,19 +3109,14 @@ async function renderNews() {
     if (!news.length) {
 
         grid.innerHTML = `
-
             <div class="news-empty">
-
                 // No news published yet.
-
             </div>
-
         `;
 
         updateNewsAdminUI();
 
         return;
-
     }
 
 
@@ -3464,94 +3126,81 @@ async function renderNews() {
         ) === "true";
 
 
-    grid.innerHTML = news.map(
-        (item) => `
+    grid.innerHTML = news
+        .map(
+            (item) => `
 
-        <article
-            class="news-card reveal active"
-        >
+            <article class="news-card">
 
-            <div class="news-image-wrap">
+                <div class="news-image-wrap">
 
-                <img
-                    class="news-image"
-                    src="${escapeHtml(
-                        item.imageUrl || ""
-                    )}"
-                    alt="${escapeHtml(
-                        item.title || "News"
-                    )}"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="news-content">
-
-                <div class="news-date">
-
-                    ${escapeHtml(
-                        formatNewsDate(
-                            item.createdAt,
-                            item.date
-                        )
-                    )}
+                    <img
+                        class="news-image"
+                        src="${escapeHtml(
+                            item.imageUrl || ""
+                        )}"
+                        alt="${escapeHtml(
+                            item.title || "News"
+                        )}"
+                        loading="lazy"
+                    >
 
                 </div>
 
+                <div class="news-content">
 
-                <h3>
+                    <div class="news-date">
+                        ${escapeHtml(
+                            formatNewsDate(
+                                item.createdAt,
+                                item.date
+                            )
+                        )}
+                    </div>
 
-                    ${escapeHtml(
-                        item.title || ""
-                    )}
+                    <h3>
+                        ${escapeHtml(
+                            item.title || ""
+                        )}
+                    </h3>
 
-                </h3>
+                    <p>
+                        ${escapeHtml(
+                            item.text || ""
+                        )}
+                    </p>
 
+                    ${
+                        isAdmin
+                            ? `
+                                <button
+                                    type="button"
+                                    class="news-delete-btn"
+                                    onclick="deleteNews('${String(
+                                        item.id
+                                    )}')"
+                                >
+                                    Delete
+                                </button>
+                            `
+                            : ""
+                    }
 
-                <p>
+                </div>
 
-                    ${escapeHtml(
-                        item.text || ""
-                    )}
+            </article>
 
-                </p>
-
-
-                ${
-                    isAdmin
-                        ? `
-
-                    <button
-                        type="button"
-                        class="news-delete-btn"
-                        onclick="deleteNews('${String(
-                            item.id
-                        )}')"
-                    >
-                        Delete
-                    </button>
-
-                    `
-                        : ""
-                }
-
-            </div>
-
-        </article>
-
-    `
-    ).join("");
+        `
+        )
+        .join("");
 
 
     updateNewsAdminUI();
-
 }
 
 
 /* =========================
-   UPDATE ADMIN UI
+   ADMIN NEWS UI
 ========================= */
 
 function updateNewsAdminUI() {
@@ -3576,7 +3225,6 @@ function updateNewsAdminUI() {
         );
 
     }
-
 }
 
 
@@ -3606,10 +3254,8 @@ function compressNewsImage(file) {
                             const maxSize =
                                 1600;
 
-
                             let width =
                                 image.width;
-
 
                             let height =
                                 image.height;
@@ -3626,12 +3272,10 @@ function compressNewsImage(file) {
                                         maxSize / height
                                     );
 
-
                                 width =
                                     Math.round(
                                         width * ratio
                                     );
-
 
                                 height =
                                     Math.round(
@@ -3649,7 +3293,6 @@ function compressNewsImage(file) {
 
                             canvas.width =
                                 width;
-
 
                             canvas.height =
                                 height;
@@ -3729,7 +3372,6 @@ function compressNewsImage(file) {
 
         }
     );
-
 }
 
 
@@ -3759,7 +3401,6 @@ async function publishNews(event) {
             "Firebase is not configured correctly.";
 
         return;
-
     }
 
 
@@ -3773,7 +3414,6 @@ async function publishNews(event) {
             "Admin access required.";
 
         return;
-
     }
 
 
@@ -3792,7 +3432,6 @@ async function publishNews(event) {
             "Firebase admin authentication required.";
 
         return;
-
     }
 
 
@@ -3826,7 +3465,6 @@ async function publishNews(event) {
             "Please add title, text and an image.";
 
         return;
-
     }
 
 
@@ -3852,7 +3490,6 @@ async function publishNews(event) {
             "Please select a PNG, JPG, WEBP or GIF image.";
 
         return;
-
     }
 
 
@@ -3966,7 +3603,6 @@ async function publishNews(event) {
         }
 
     }
-
 }
 
 
@@ -4019,7 +3655,6 @@ function clearNewsForm() {
             "";
 
     }
-
 }
 
 
@@ -4036,7 +3671,6 @@ async function deleteNews(id) {
     ) {
 
         return;
-
     }
 
 
@@ -4047,7 +3681,6 @@ async function deleteNews(id) {
     ) {
 
         return;
-
     }
 
 
@@ -4067,7 +3700,6 @@ async function deleteNews(id) {
         );
 
         return;
-
     }
 
 
@@ -4078,7 +3710,6 @@ async function deleteNews(id) {
     ) {
 
         return;
-
     }
 
 
@@ -4151,13 +3782,11 @@ async function deleteNews(id) {
             error
         );
 
-
         alert(
             "Could not delete this news item."
         );
 
     }
-
 }
 
 
@@ -4196,7 +3825,7 @@ async function adminLogout() {
 
     document
         .getElementById("adminBadge")
-        ?.classList.remove(
+        .classList.remove(
             "visible"
         );
 
@@ -4218,18 +3847,11 @@ async function adminLogout() {
 
     backToEntryChoices();
 
-
-    window.location.hash =
-        "news";
-
-
-    await renderNews();
-
 }
 
 
 /* =========================
-   NEWS IMAGE PREVIEW
+   IMAGE PREVIEW
 ========================= */
 
 const newsImageInput =
@@ -4280,9 +3902,7 @@ if (newsImageInput) {
                 };
 
 
-            reader.readAsDataURL(
-                file
-            );
+            reader.readAsDataURL(file);
 
         }
     );
@@ -4291,13 +3911,12 @@ if (newsImageInput) {
 
 
 /* =========================
-   INITIAL NEWS LOAD
+   INITIAL LOAD
 ========================= */
 
 renderNews();
 
 updateNewsAdminUI();
-
 
 </script>
 
